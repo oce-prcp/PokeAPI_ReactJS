@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 
+import pokemonService from "./components/pokemonService";
 import Navbar from "./components/layout/Navbar";
 import Pokedex from "./components/layout/Pokedex";
 import PokemonThumbnail from "./components/PokemonThumbnail";
@@ -13,6 +14,15 @@ function App() {
   const [loadMore, setLoadMore] = useState(
     "https://pokeapi.co/api/v2/pokemon/"
   );
+
+  const handleClick = async () => {
+    try {
+      const responce = await pokemonService.detail(allPokemons);
+      setLoadMore(responce);
+    } catch (err) {
+      setLoadMore({ error: "pokemon not found" });
+    }
+  };
 
   const getAllPokemons = async () => {
     const res = await fetch(loadMore);
@@ -42,7 +52,27 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <Routes>
+        {" "}
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/pokedex" element={<Pokedex />} />
+      </Routes>
       <div className="app-container">
+        {/* <input
+          value={allPokemons}
+          onChange={(evt) => setAllPokemons(evt.target.value)}
+        />
+        <button onClick={handleClick}>Search</button>
+
+        {loadMore &&
+          (loadMore.error ? (
+            <h1>{loadMore.error}</h1>
+          ) : (
+            <div>
+              <h1>{loadMore.name}</h1>
+              <img src={loadMore.sprites.front_default} alt="lolsorry" />
+            </div>
+          ))} */}
         <h1>Pokémons</h1>
         <div className="pokemon-container">
           <div className="all-container">
@@ -61,11 +91,6 @@ function App() {
       <button className="load-more" onClick={() => getAllPokemons()}>
         Load more
       </button>
-      <Routes>
-        {" "}
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/pokedex" element={<Pokedex />} />
-      </Routes>
     </Router>
   );
 }

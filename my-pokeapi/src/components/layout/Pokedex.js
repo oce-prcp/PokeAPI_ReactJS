@@ -4,24 +4,42 @@ import { Link } from "react-router-dom";
 function Pokedex() {
   return (
     <div>
-      <h1 style={text}>About</h1>
-      <br></br>
-      <h3 style={title}>IPSSI</h3>
-      <p>=========</p>
-      <p>This is a TP ToDoList App</p>
+      <input
+        type="text"
+        placeholder="Entrez un nom de Pokémon..."
+        style={input}
+        className="input-pokedex"
+      />
+      <Link to="/pokedex">
+        <button style={btn} className="btn-input">
+          Rechercher
+        </button>
+      </Link>
     </div>
   );
 }
 
-const text = {
+const btn = {
   color: "#333",
   textDecoration: "none",
-  border: "1px solid #333",
+  border: "2px solid #333",
+  padding: "5px",
+  borderRadius: "8px",
+  textAlign: "center",
+  width: "6rem",
+  margin: "auto",
+  marginTop: "2rem",
 };
 
-const title = {
-  color: "#333",
-  textDecoration: "none",
+const input = {
+  margin: "auto",
+  marginTop: "1rem",
+  width: "20rem",
+  height: "20px",
+  border: "1px solid #333",
+  borderRadius: "5px",
+  padding: "3px",
+  marginLeft: "1rem",
 };
 
 export default Pokedex;
