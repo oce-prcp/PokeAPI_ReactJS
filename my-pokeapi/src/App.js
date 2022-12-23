@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import React, { Component } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
+import Navbar from "./components/layout/Navbar";
+import Pokedex from "./components/layout/Pokedex";
 import PokemonThumbnail from "./components/PokemonThumbnail";
-import Header from "./components/layout/Header";
 
 function App() {
   const [allPokemons, setAllPokemons] = useState([]);
@@ -20,7 +23,7 @@ function App() {
     function createPokemonObject(result) {
       result.forEach(async (pokemon) => {
         const res = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
+          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}/?offset=0&limit=20`
         );
         const data = await res.json();
         setAllPokemons((currentList) => [...currentList, data]);
@@ -30,30 +33,40 @@ function App() {
     await console.log(allPokemons);
   };
 
+  const sortPokemon = (p1, p2) => p1.id < p2.id;
+
   useEffect(() => {
     getAllPokemons();
   }, []);
 
   return (
-    <div className="app-container">
-      <h1>Pokémons</h1>
-      <div className="pokemon-container">
-        <div className="all-container">
-          {allPokemons.map((pokemon, index) => (
-            <PokemonThumbnail
-              id={pokemon.id}
-              name={pokemon.name}
-              image={pokemon.sprites.other.dream_world.front_default}
-              type={pokemon.types[0].type.name}
-              key={index}
-            />
-          ))}
-          <button className="load-more" onClick={() => getAllPokemons()}>
-            Load more
-          </button>
+    <Router>
+      <Navbar />
+      <div className="app-container">
+        <h1>Pokémons</h1>
+        <div className="pokemon-container">
+          <div className="all-container">
+            {allPokemons.sort(sortPokemon).map((pokemon, index) => (
+              <PokemonThumbnail
+                id={pokemon.id}
+                name={pokemon.name}
+                image={pokemon.sprites.other.dream_world.front_default}
+                type={pokemon.types[0].type.name}
+                key={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <button className="load-more" onClick={() => getAllPokemons()}>
+        Load more
+      </button>
+      <Routes>
+        {" "}
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/pokedex" element={<Pokedex />} />
+      </Routes>
+    </Router>
   );
 }
 
