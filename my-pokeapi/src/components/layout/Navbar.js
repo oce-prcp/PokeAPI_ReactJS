@@ -36,7 +36,7 @@ function ColorSchemesExample() {
             }}
             href="/pokedex"
           >
-            Pokédex
+            My Pokémons
           </Nav.Link>
           <Nav.Link
             style={{
