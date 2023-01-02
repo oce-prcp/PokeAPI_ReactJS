@@ -8,6 +8,8 @@ import pokemonService from "./components/pokemonService";
 import Navbar from "./components/layout/Navbar";
 import Pokedex from "./components/layout/Pokedex";
 import PokemonThumbnail from "./components/PokemonThumbnail";
+// import Fight from "./components/layout/Fight";
+// import Connection from "./components/layout/Connection";
 
 function App() {
   const [allPokemons, setAllPokemons] = useState([]);
@@ -31,15 +33,17 @@ function App() {
     setLoadMore(data.next);
 
     async function createPokemonObject(result) {
-      return await Promise.all(result.map(async (pokemon) => {
-        const res = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}/`
-        );
-        const data = await res.json();
-        return data;
-      }));
+      return await Promise.all(
+        result.map(async (pokemon) => {
+          const res = await fetch(
+            `https://pokeapi.co/api/v2/pokemon/${pokemon.name}/`
+          );
+          const data = await res.json();
+          return data;
+        })
+      );
     }
-    const pokemons = await createPokemonObject(data.results)
+    const pokemons = await createPokemonObject(data.results);
     setAllPokemons([...allPokemons, ...pokemons]);
     console.log(allPokemons);
   };
@@ -57,6 +61,8 @@ function App() {
         {" "}
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/pokedex" element={<Pokedex />} />
+        {/* <Route path="/fight" element={<Fight />} />
+        <Route path="/connection" element={<Connection />} /> */}
       </Routes>
       <div className="app-container">
         {/* <input
