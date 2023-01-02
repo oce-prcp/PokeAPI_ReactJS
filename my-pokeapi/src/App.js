@@ -30,17 +30,18 @@ function App() {
 
     setLoadMore(data.next);
 
-    function createPokemonObject(result) {
-      result.forEach(async (pokemon) => {
+    async function createPokemonObject(result) {
+      return await Promise.all(result.map(async (pokemon) => {
         const res = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}/?offset=0&limit=20`
+          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}/`
         );
         const data = await res.json();
-        setAllPokemons((currentList) => [...currentList, data]);
-      });
+        return data;
+      }));
     }
-    createPokemonObject(data.results);
-    await console.log(allPokemons);
+    const pokemons = await createPokemonObject(data.results)
+    setAllPokemons([...allPokemons, ...pokemons]);
+    console.log(allPokemons);
   };
 
   const sortPokemon = (p1, p2) => p1.id < p2.id;
