@@ -167,36 +167,52 @@ h3 {
 }
 
 .btn-input {
-  color: "#333";
-  text-decoration: "none";
-  border: "2px solid #333";
-  padding: "5px";
-  border-radius: "8px";
-  text-align: "center";
-  width: "6rem";
-  margin: "auto";
-  margin-top: "2rem";
+  color: #333;
+  text-decoration: none;
+  border: 2px solid #333;
+  padding: 5px;
+  border-radius: 8px;
+  text-align: center;
+  width: 6rem;
+  margin: auto;
+  margin-top: 2rem;
 }
 
 .btn-input:hover {
   background-color: #ffd322;
-  color: "#333";
-  text-decoration: "none";
-  border: "2px solid #333";
-  padding: "5px";
-  border-radius: "8px";
-  text-align: "center";
-  width: "6rem";
-  margin: "auto";
-  margin-top: "2rem";
+  color: #333;
+  text-decoration: none;
+  border: 2px solid #333;
+  padding: 5px;
+  border-radius: 8px;
+  text-align: center;
+  width: 6rem;
+  margin: auto;
+  margin-top: 2rem;
 }
 
 .input-pokedex {
-  margin: "auto";
-  margin-top: "1rem";
-  width: "20rem";
-  height: "20px";
-  border: "1px solid #333";
-  border-radius: "5px";
-  padding: "3px";
+  margin: auto;
+  margin-top: 1rem;
+  width: 20rem;
+  height: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.btn-connexion {
+  background-color: #ffd322;
+  color: #333;
+  text-decoration: none;
+  border: 3px solid #2a68b0;
+  padding: 5px;
+  border-radius: 8px;
+  text-align: center;
+  width: 7rem;
+  height: 2rem;
+  float: right;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
