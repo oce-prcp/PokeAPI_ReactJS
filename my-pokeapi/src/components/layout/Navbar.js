@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 // import { Button } from "react-bootstrap";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../index.css";
 
 import React from "react";
@@ -50,8 +50,8 @@ function ColorSchemesExample() {
           >
             Fight
           </Nav.Link>
+          <button className="btn-connexion">Connexion</button>
         </Nav>
-        <button className="btn-connexion">Connexion</button>
         <br></br>
         <br></br>
       </Container>
