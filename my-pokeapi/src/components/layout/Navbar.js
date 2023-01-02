@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+
 import "../../index.css";
 
 import React from "react";
@@ -24,7 +25,7 @@ function ColorSchemesExample() {
             }}
             href="/"
           >
-            List Pokémons
+            List
           </Nav.Link>
           <Nav.Link
             style={{
@@ -48,8 +49,8 @@ function ColorSchemesExample() {
           >
             Fight
           </Nav.Link>
+          <button className="btn-connexion">Connexion</button>
         </Nav>
-        <button className="btn-connexion">Connexion</button>
         <br></br>
         <br></br>
       </Container>

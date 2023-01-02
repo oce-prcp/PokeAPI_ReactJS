@@ -7,9 +7,9 @@ import Pokedex from "./components/Pokedex";
 function App() {
   return (
     <Router>
-      <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Pokedex/>}/>
+        <Route path="/" element={<Pokedex />} />
       </Routes>
     </Router>
   );

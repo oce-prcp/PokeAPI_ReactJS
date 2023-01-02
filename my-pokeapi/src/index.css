@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("/img/background.jpg");
-
+  background-attachment: fixed;
   background-repeat: no-repeat;
   border: 0;
   padding: 0;
@@ -136,9 +136,34 @@ h3 {
   text-align: center;
 }
 
+.load-more:hover {
+  background-color: #333;
+  color: #ffd322;
+  transition: background 0.2s ease-in-out;
+}
+
 @media (max-width: 500px) {
   .load-more {
     margin-left: 35vw;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+@media (min-width: 768px) {
+  .load-more {
+    margin-left: 40vw;
+    font-size: 0.9rem;
+    font-weight: 650;
+  }
+}
+@media (min-width: 1024px) {
+  .load-more {
+    margin-left: 45vw;
+  }
+}
+@media (min-width: 1200px) {
+  .load-more {
+    margin-left: 50vw;
   }
 }
 
@@ -209,10 +234,27 @@ h3 {
   padding: 5px;
   border-radius: 8px;
   text-align: center;
-  width: 7rem;
-  height: 2rem;
+  width: 8rem;
+  height: 2.5rem;
   float: right;
   margin-right: 1rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-connexion:hover {
+  background-color: #ffd322;
+  color: #333;
+  text-decoration: none;
+  border: 3px solid #fe5858;
+  padding: 5px;
+  border-radius: 8px;
+  text-align: center;
+  width: 8rem;
+  height: 2.5rem;
+  float: right;
+  margin-right: 1rem;
+  font-size: 1rem;
   font-weight: bold;
 }
