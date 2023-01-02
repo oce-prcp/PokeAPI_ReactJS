@@ -169,6 +169,9 @@ h3 {
 
 .navbar {
   background-color: #333;
+  text-align: left;
+  padding: 5px;
+  font-size: 5px;
   text-align: center;
   padding: 2px;
   font-size: 20px;
@@ -188,7 +191,7 @@ h3 {
 }
 
 .logo {
-  width: 15%;
+  width: 4%;
 }
 
 .btn-input {
@@ -230,15 +233,18 @@ h3 {
   background-color: #ffd322;
   color: #333;
   text-decoration: none;
+  border: 1.5px solid #2a68b0;
+  padding: 5px;
+  border-radius: 6px;
   border: 3px solid #2a68b0;
   padding: 2px;
   border-radius: 8px;
   text-align: center;
-  width: 8rem;
-  height: 2.5rem;
+  width: 5.5rem;
+  height: 1.8rem;
   float: right;
   margin-right: 1rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   cursor: pointer;
 }
@@ -247,6 +253,7 @@ h3 {
   background-color: #ffd322;
   color: #333;
   text-decoration: none;
+  border: 1.5px solid #fe5858;
   border: 3px solid #fe5858;
   padding: 2px;
   border-radius: 8px;
@@ -257,4 +264,5 @@ h3 {
   margin-right: 1rem;
   font-size: 1rem;
   font-weight: bold;
+  scale: 1.1;
 }

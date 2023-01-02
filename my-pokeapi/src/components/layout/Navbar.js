@@ -20,8 +20,8 @@ function ColorSchemesExample() {
             style={{
               color: "#ffd322",
               fontWeight: "bold",
-              WebkitTextStroke: 1.3 + "px #2a68b0",
-              fontSize: 25 + "px",
+              WebkitTextStroke: 0.5 + "px #2a68b0",
+              fontSize: 15 + "px",
             }}
             href="/"
           >
@@ -31,8 +31,8 @@ function ColorSchemesExample() {
             style={{
               color: "#ffd322",
               fontWeight: "bold",
-              WebkitTextStroke: 1.3 + "px #2a68b0",
-              fontSize: 25 + "px",
+              WebkitTextStroke: 0.5 + "px #2a68b0",
+              fontSize: 15 + "px",
             }}
             href="/pokedex"
           >
@@ -42,8 +42,8 @@ function ColorSchemesExample() {
             style={{
               color: "#ffd322",
               fontWeight: "bold",
-              WebkitTextStroke: 1.3 + "px #2a68b0",
-              fontSize: 25 + "px",
+              WebkitTextStroke: 0.5 + "px #2a68b0",
+              fontSize: 15 + "px",
             }}
             href="/fight"
           >
