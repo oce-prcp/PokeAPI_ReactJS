@@ -11,7 +11,7 @@ export default function navbar2(){
 
                 <Nav className="me-auto">
                 <Nav.Link href="/">Pokédex National</Nav.Link>
-                <Nav.Link href="/MonPokedex">Mon Pokédex</Nav.Link>
+                <Nav.Link href="/MonPokedex">My Pokémons</Nav.Link>
                 <div>
                     <input
                         type="text"
@@ -20,7 +20,7 @@ export default function navbar2(){
                     />
                     <Link to="/pokedex">
                         <button className="btn-input">
-                        Rechercher
+                        Search
                         </button>
                     </Link>
                 </div>
