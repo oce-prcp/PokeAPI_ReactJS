@@ -1,7 +1,9 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+// import { Button } from "react-bootstrap";
 import {  Link } from "react-router-dom";
+import "../../index.css";
 
 import React from "react";
 
@@ -15,22 +17,43 @@ function ColorSchemesExample() {
           className="logo"
         />
         <Nav className="me-auto">
-          <Nav.Link href="/">Pokédex National</Nav.Link>
-          <Nav.Link href="/MonPokedex">Mes Pokémon</Nav.Link>
-          <div>
-              <input
-                type="text"
-                placeholder="Entrez un nom de Pokémon..."
-                className="input-pokedex"
-              />
-              <Link to="/pokedex">
-                <button className="btn-input">
-                  Rechercher
-                </button>
-              </Link>
-          </div>
+          <Nav.Link
+            style={{
+              color: "#ffd322",
+              fontWeight: "bold",
+              WebkitTextStroke: 1.3 + "px" + " " + "#2a68b0",
+              fontSize: 25 + "px",
+            }}
+            href="/"
+          >
+            List Pokémons
+          </Nav.Link>
+          <Nav.Link
+            style={{
+              color: "#ffd322",
+              fontWeight: "bold",
+              WebkitTextStroke: 1.3 + "px" + " " + "#2a68b0",
+              fontSize: 25 + "px",
+            }}
+            href="/pokedex"
+          >
+            Pokédex
+          </Nav.Link>
+          <Nav.Link
+            style={{
+              color: "#ffd322",
+              fontWeight: "bold",
+              WebkitTextStroke: 1.3 + "px" + " " + "#2a68b0",
+              fontSize: 25 + "px",
+            }}
+            href="/fight"
+          >
+            Fight
+          </Nav.Link>
         </Nav>
-        
+        <button className="btn-connexion">Connexion</button>
+        <br></br>
+        <br></br>
       </Container>
     </Navbar>
   );
