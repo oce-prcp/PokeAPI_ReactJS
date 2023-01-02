@@ -25,7 +25,7 @@ function ColorSchemesExample() {
             }}
             href="/"
           >
-            List Pokémons
+            List
           </Nav.Link>
           <Nav.Link
             style={{
