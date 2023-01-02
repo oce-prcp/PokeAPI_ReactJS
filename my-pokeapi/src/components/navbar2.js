@@ -44,7 +44,8 @@ export default function navbar2() {
             </div>
           </Nav>
         </Container>
-      </Navbar>
+        </Navbar>
     </div>
+    
   );
 }
