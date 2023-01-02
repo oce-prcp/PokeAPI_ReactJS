@@ -1,8 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-// import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 import "../../index.css";
 
 import React from "react";
@@ -21,7 +20,7 @@ function ColorSchemesExample() {
             style={{
               color: "#ffd322",
               fontWeight: "bold",
-              WebkitTextStroke: 1.3 + "px" + " " + "#2a68b0",
+              WebkitTextStroke: 1.3 + "px #2a68b0",
               fontSize: 25 + "px",
             }}
             href="/"
@@ -32,7 +31,7 @@ function ColorSchemesExample() {
             style={{
               color: "#ffd322",
               fontWeight: "bold",
-              WebkitTextStroke: 1.3 + "px" + " " + "#2a68b0",
+              WebkitTextStroke: 1.3 + "px #2a68b0",
               fontSize: 25 + "px",
             }}
             href="/pokedex"
@@ -43,7 +42,7 @@ function ColorSchemesExample() {
             style={{
               color: "#ffd322",
               fontWeight: "bold",
-              WebkitTextStroke: 1.3 + "px" + " " + "#2a68b0",
+              WebkitTextStroke: 1.3 + "px #2a68b0",
               fontSize: 25 + "px",
             }}
             href="/fight"

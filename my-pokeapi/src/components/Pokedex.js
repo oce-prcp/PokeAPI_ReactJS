@@ -54,10 +54,12 @@ function Pokedex() {
                     <div className="all-container">
                         {allPokemons.sort(sortPokemon).map((pokemon, index) => (
                         <PokemonThumbnail
+                
                             id={pokemon.id}
                             name={pokemon.name}
                             image={pokemon.sprites.other.dream_world.front_default}
                             type={pokemon.types[0].type.name}
+                            type2={pokemon.types[1]?.type.name}
                             
                             key={index}
                         />
