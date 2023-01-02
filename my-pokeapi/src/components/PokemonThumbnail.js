@@ -1,7 +1,6 @@
 import React from "react";
 
-const PokemonThumbnail = ({ id, name, image, type }) => {
-  const style = `thumb-container ${type}`;
+const PokemonThumbnail = ({ id, name, image, type,type2 }) => {
   return (
     <div className="thumb-container">
       <div className="number">
@@ -10,7 +9,7 @@ const PokemonThumbnail = ({ id, name, image, type }) => {
       <img src={image} alt={name} />
       <div className="detail-wrapper">
         <h2>{name}</h2>
-        <small>Type : {type}</small>
+        <small>Type : {type}{type2?" - " + type2:""}</small>
         <button
           style={{
             background: "#ffd322",
