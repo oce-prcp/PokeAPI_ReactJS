@@ -85,26 +85,38 @@ code {
   opacity: 0.9;
   color: #fff;
 }
-h3 {
+h1 {
   margin-bottom: 0.2rem;
+  font-size: 2.3rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #ffd322;
+  font-family: "Courier New", Courier, monospace;
 }
 .thumb-container .number {
   border-radius: 1rem;
   padding: 0.3rem 0.5rem;
   background-color: #ffd322;
   color: rgb(22, 22, 22);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 .thumb-container img {
   width: 120px;
   height: 120px;
 }
 .thumb-container small {
+  font-size: 0.8rem;
+  font-weight: 500;
   text-transform: capitalize;
 }
 .detail-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 .detail-wrapper button {
   color: rgb(22, 22, 22);
@@ -134,6 +146,7 @@ h3 {
   margin-left: 50%;
   padding: auto;
   text-align: center;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .load-more:hover {
@@ -163,7 +176,7 @@ h3 {
 }
 @media (min-width: 1200px) {
   .load-more {
-    margin-left: 50vw;
+    margin-left: 45vw;
   }
 }
 
@@ -181,6 +194,9 @@ h3 {
   color: #fff;
   text-decoration: none;
   padding: 0 10px;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  float: left;
 }
 
 .text {
@@ -191,7 +207,12 @@ h3 {
 }
 
 .logo {
-  width: 4%;
+  width: 7%;
+  height: 7%;
+  margin: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
 }
 
 .btn-input {
@@ -236,9 +257,7 @@ h3 {
   border: 1.5px solid #2a68b0;
   padding: 5px;
   border-radius: 6px;
-  border: 3px solid #2a68b0;
   padding: 2px;
-  border-radius: 8px;
   text-align: center;
   width: 5.5rem;
   height: 1.8rem;
@@ -246,7 +265,9 @@ h3 {
   margin-right: 1rem;
   font-size: 0.8rem;
   font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
   cursor: pointer;
+  margin-top: 1.3rem;
 }
 
 .btn-connexion:hover {
@@ -254,15 +275,5 @@ h3 {
   color: #333;
   text-decoration: none;
   border: 1.5px solid #fe5858;
-  border: 3px solid #fe5858;
-  padding: 2px;
-  border-radius: 8px;
-  text-align: center;
-  width: 8rem;
-  height: 2.5rem;
-  float: right;
-  margin-right: 1rem;
-  font-size: 1rem;
-  font-weight: bold;
   scale: 1.1;
 }
