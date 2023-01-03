@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import pokemonService from "./pokemonService";
 import PokemonThumbnail from "./PokemonThumbnail";
-import { Button } from "react-bootstrap";
-import * as icons from "react-bootstrap-icons";
+
 
 import "../style/pokedex.css";
 import '../style/pokedex.css';

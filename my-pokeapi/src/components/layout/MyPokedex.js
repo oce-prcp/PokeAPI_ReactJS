@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import "../../style/mypokedex.css";
 import { useEffect, useState } from "react";
 import PokemonThumbnail from "../PokemonThumbnail";
-import { Button } from "react-bootstrap";
-
-
-import "../style/mypokedex.css";
+import "../../style/mypokedex.css";
 
 function SearchPokemon() {
   const [pokemon, setPokemon] = useState(null);
@@ -68,7 +65,7 @@ function SearchPokemon() {
           type2={pokemon.types[1]?.type.name}
         />
       )}
-      {/* <button className="btn-add">ADD</button> */}
+
     </div>
   );
 }
