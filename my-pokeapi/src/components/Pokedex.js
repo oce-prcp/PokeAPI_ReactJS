@@ -57,9 +57,6 @@ function Pokedex() {
         <h1>Pokémons</h1>
 
         <div className="pokemon-container">
-          <Button variant="danger" size="small">
-            <i class="fas fa-star"></i>
-          </Button>
           <div className="all-container">
             {allPokemons.sort(sortPokemon).map((pokemon, index) => (
               <PokemonThumbnail

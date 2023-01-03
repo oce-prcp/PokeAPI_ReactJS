@@ -67,9 +67,6 @@ function SearchPokemon() {
           type2={pokemon.types[1]?.type.name}
         />
       )}
-      <Button variant="danger" size="lg">
-        <i class="fas fa-star"></i>
-      </Button>
       <button className="btn-add">ADD</button>
     </div>
   );
