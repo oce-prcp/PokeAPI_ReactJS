@@ -67,7 +67,7 @@ function SearchPokemon() {
           type2={pokemon.types[1]?.type.name}
         />
       )}
-      <button className="btn-add">ADD</button>
+      {/* <button className="btn-add">ADD</button> */}
     </div>
   );
 }
