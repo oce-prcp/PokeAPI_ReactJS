@@ -32,3 +32,25 @@
   border-radius: 5px;
   padding: 3px;
 }
+
+.btn-add {
+  color: #333;
+  text-decoration: none;
+  border: 3px solid #2a68b0;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  background-color: #ffd322;
+  margin-left: 5.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 10rem;
+  height: 2.5rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.btn-add:hover {
+  scale: 1.1;
+}

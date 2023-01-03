@@ -36,6 +36,10 @@
   background-color: #333;
   opacity: 0.9;
   color: #fff;
+  height: auto;
+  width: auto;
+  margin-bottom: 1rem;
+  position: relative;
 }
 h1 {
   margin-bottom: 0.2rem;
@@ -78,6 +82,22 @@ h1 {
   border-radius: 0.2rem;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.185);
+}
+.btn-star {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 3rem;
+  color: #ffd322;
+  margin-left: 6rem;
+  position: absolute;
+  right: 00.3rem;
+  top: 0;
+}
+.btn-star:hover {
+  color: #fff;
+  scale: 1.1;
+  transition: all 0.2s ease-in-out;
 }
 .load-more {
   border-radius: 3px;

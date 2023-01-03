@@ -1,24 +1,28 @@
 import React from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../style/mypokedex.css";
-import {useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import PokemonThumbnail from "../PokemonThumbnail";
+import { Button } from "react-bootstrap";
 
+
+import "../style/mypokedex.css";
 
 function SearchPokemon() {
   const [pokemon, setPokemon] = useState(null);
-  const [,setLoading] = useState(false);
+  const [, setLoading] = useState(false);
   const [txtImput, settxtInput] = useState("");
-  const [,setError] = useState(null);
+  const [, setError] = useState(null);
 
   useEffect(() => {
     async function fetchPokemon() {
-
       setLoading(true);
       setError(null);
 
       try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${txtImput}`);
+        const response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${txtImput}`
+        );
         const data = await response.json();
 
         if (!response.ok) {
@@ -33,41 +37,39 @@ function SearchPokemon() {
       }
     }
 
-    if(txtImput !== ""){
+    if (txtImput !== "") {
       fetchPokemon();
     }
   }, [txtImput]);
   return (
     <div>
-
-<div></div>
+      <div></div>
       <input
-        type="text" onChange={name =>{
+        type="text"
+        onChange={(name) => {
           settxtInput(name.target.value);
-          console.log(name)
+          console.log(name);
         }}
-        
-        
         placeholder="Enter a name.. ex: pikachu"
         style={input}
         className="input-pokedex"
-        />
+      />
       <Link to="/pokedex">
         <button style={btn} className="btn-input">
           Search
         </button>
       </Link>
-        {!pokemon === false &&
+      {!pokemon === false && (
         <PokemonThumbnail
-        id={pokemon.id}
-        name={pokemon.name}
-        image={pokemon.sprites.other.dream_world.front_default}
-        type={pokemon.types[0].type.name}
-        type2={pokemon.types[1]?.type.name}
+          id={pokemon.id}
+          name={pokemon.name}
+          image={pokemon.sprites.other.dream_world.front_default}
+          type={pokemon.types[0].type.name}
+          type2={pokemon.types[1]?.type.name}
         />
-        }
+      )}
+      {/* <button className="btn-add">ADD</button> */}
     </div>
-
   );
 }
 
