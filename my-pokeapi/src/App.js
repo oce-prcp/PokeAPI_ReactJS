@@ -4,6 +4,7 @@ import Navbar from "./components/layout/Navbar";
 import Pokedex from "./components/Pokedex";
 import SearchPokemon from "./components/layout/MyPokedex";
 
+
 function App() {
   return (
     <Router>

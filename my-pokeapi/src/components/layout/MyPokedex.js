@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
+import "../../style/mypokedex.css";
 
 import "../style/mypokedex.css";
 
@@ -9,39 +10,35 @@ function SearchPokemon() {
       <input
         type="text"
         placeholder="Enter a name.. ex: pikachu"
-        style={input}
+
         className="input-pokedex"
       />
       <Link to="/pokedex">
-        <button style={btn} className="btn-input">
+        <button className="btn-input">
           Search
         </button>
       </Link>
     </div>
+
   );
 }
 
-const btn = {
-  color: "#333",
-  textDecoration: "none",
-  border: "2px solid #333",
-  padding: "5px",
-  borderRadius: "8px",
-  textAlign: "center",
-  width: "6rem",
-  margin: "auto",
-  marginTop: "2rem",
-};
+// const btn = {
+//   textDecoration: "none",
+//   padding: "5px",
+//   textAlign: "center",
+//   width: "6rem",
+//   margin: "auto",
+//   marginTop: "2rem",
+// };
 
-const input = {
-  margin: "auto",
-  marginTop: "1rem",
-  width: "20rem",
-  height: "20px",
-  border: "1px solid #333",
-  borderRadius: "5px",
-  padding: "3px",
-  marginLeft: "1rem",
-};
+// const input = {
+//   margin: "auto",
+//   marginTop: "1rem",
+//   width: "20rem",
+//   height: "20px",
+//   padding: "3px",
+//   marginLeft: "1rem",
+// };
 
 export default SearchPokemon;
