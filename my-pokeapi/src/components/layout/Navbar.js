@@ -10,12 +10,12 @@ function ColorSchemesExample() {
   return (
     <Navbar className="navbar">
       <Container>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/640px-International_Pok%C3%A9mon_logo.svg.png"
-          alt="logo"
-          className="logo"
-        />
         <Nav className="me-auto">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/640px-International_Pok%C3%A9mon_logo.svg.png"
+            alt="logo"
+            className="logo"
+          />
           <Nav.Link
             style={{
               color: "#ffd322",
@@ -52,8 +52,6 @@ function ColorSchemesExample() {
           <button className="btn-connexion">Connexion</button>
         </Nav>
       </Container>
-      <br></br>
-      <br></br>
     </Navbar>
   );
 }
