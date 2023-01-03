@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import pokemonService from "./pokemonService";
 import PokemonThumbnail from "./PokemonThumbnail";
+import { Button } from "react-bootstrap";
+import * as icons from "react-bootstrap-icons";
+
 import "../style/pokedex.css";
 
 function Pokedex() {
@@ -54,6 +57,9 @@ function Pokedex() {
         <h1>Pokémons</h1>
 
         <div className="pokemon-container">
+          <Button variant="danger" size="small">
+            <i class="fas fa-star"></i>
+          </Button>
           <div className="all-container">
             {allPokemons.sort(sortPokemon).map((pokemon, index) => (
               <PokemonThumbnail
