@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function SearhPokemon() {
+function SearchPokemon() {
   return (
     <div>
       <input
@@ -42,4 +42,4 @@ const input = {
   marginLeft: "1rem",
 };
 
-export default SearhPokemon;
+export default SearchPokemon;
