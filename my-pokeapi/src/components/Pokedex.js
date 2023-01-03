@@ -3,6 +3,8 @@ import pokemonService from "./pokemonService";
 import PokemonThumbnail from "./PokemonThumbnail";
 import '../style/pokedex.css';
 
+import "../styles/pokedex.css";
+
 function Pokedex() {
   const [allPokemons, setAllPokemons] = useState([]);
   const [loadMore, setLoadMore] = useState(

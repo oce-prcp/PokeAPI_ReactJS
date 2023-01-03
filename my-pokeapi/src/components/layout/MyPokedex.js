@@ -5,6 +5,8 @@ import {useEffect,useState } from "react";
 import PokemonThumbnail from "../PokemonThumbnail";
 
 
+import "../style/mypokedex.css";
+
 function SearchPokemon() {
   const [pokemon, setPokemon] = useState(null);
   const [,setLoading] = useState(false);
@@ -90,12 +92,3 @@ const input = {
 };
 
 export default SearchPokemon;
-
-<div id="container">
-  <button class="learn-more">
-    <span class="circle" aria-hidden="true">
-      <span class="icon arrow"></span>
-    </span>
-    <span class="button-text">Learn More</span>
-  </button>
-</div>;
