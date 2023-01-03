@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "../style/mypokedex.css";
+
 function SearchPokemon() {
   return (
     <div>
@@ -43,12 +45,3 @@ const input = {
 };
 
 export default SearchPokemon;
-
-<div id="container">
-  <button class="learn-more">
-    <span class="circle" aria-hidden="true">
-      <span class="icon arrow"></span>
-    </span>
-    <span class="button-text">Learn More</span>
-  </button>
-</div>;

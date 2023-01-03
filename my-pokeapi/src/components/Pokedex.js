@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import pokemonService from "./pokemonService";
 import PokemonThumbnail from "./PokemonThumbnail";
 
+import "../styles/pokedex.css";
+
 function Pokedex() {
   const [allPokemons, setAllPokemons] = useState([]);
   const [loadMore, setLoadMore] = useState(
