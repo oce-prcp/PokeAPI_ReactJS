@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import pokemonService from "./pokemonService";
 import PokemonThumbnail from "./PokemonThumbnail";
-import '../style/pokedex.css';
-
-import "../styles/pokedex.css";
+import "../style/pokedex.css";
 
 function Pokedex() {
   const [allPokemons, setAllPokemons] = useState([]);
