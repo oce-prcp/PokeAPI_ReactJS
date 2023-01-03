@@ -6,13 +6,13 @@ function SearchPokemon() {
     <div>
       <input
         type="text"
-        placeholder="Entrez un nom de Pokémon..."
+        placeholder="Enter a name.. ex: pikachu"
         style={input}
         className="input-pokedex"
       />
       <Link to="/pokedex">
         <button style={btn} className="btn-input">
-          Rechercher
+          Search
         </button>
       </Link>
     </div>
@@ -43,3 +43,12 @@ const input = {
 };
 
 export default SearchPokemon;
+
+<div id="container">
+  <button class="learn-more">
+    <span class="circle" aria-hidden="true">
+      <span class="icon arrow"></span>
+    </span>
+    <span class="button-text">Learn More</span>
+  </button>
+</div>;
