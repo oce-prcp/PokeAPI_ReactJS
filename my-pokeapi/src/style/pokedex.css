@@ -39,6 +39,7 @@
   height: auto;
   width: auto;
   margin-bottom: 1rem;
+  position: relative;
 }
 h1 {
   margin-bottom: 0.2rem;
@@ -88,7 +89,10 @@ h1 {
   cursor: pointer;
   font-size: 3rem;
   color: #ffd322;
-  margin-left: 8rem;
+  margin-left: 6rem;
+  position: absolute;
+  right: 00.3rem;
+  top: 0;
 }
 .btn-star:hover {
   color: #fff;
