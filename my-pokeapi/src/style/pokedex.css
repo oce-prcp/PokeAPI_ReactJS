@@ -1,0 +1,135 @@
+/* Path: src\style\pokedex.css */
+/* Style Pokedex.js */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100vh; */
+  padding: 3rem 0.5rem;
+  color: rgb(247, 247, 247);
+}
+.pokemon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(22, 22, 22);
+}
+.all-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.thumb-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  margin: 0.3rem;
+  border: 3px solid #333;
+  border-radius: 0.4rem;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.089);
+  max-width: 20rem;
+  background-color: #333;
+  opacity: 0.9;
+  color: #fff;
+}
+h1 {
+  margin-bottom: 0.2rem;
+  font-size: 2.3rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #ffd322;
+  font-family: "Courier New", Courier, monospace;
+}
+.thumb-container .number {
+  border-radius: 1rem;
+  padding: 0.3rem 0.5rem;
+  background-color: #ffd322;
+  color: rgb(22, 22, 22);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.thumb-container img {
+  width: 120px;
+  height: 120px;
+}
+.thumb-container small {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.detail-wrapper button {
+  color: rgb(22, 22, 22);
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.185);
+}
+.load-more {
+  border-radius: 3px;
+  border: 1px solid #ffd322;
+  color: #444;
+  padding: 0.5rem 1.5rem;
+  min-width: 10%;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ffd322;
+  transition: background 0.2s ease-in-out;
+  display: inline-block;
+  margin-left: 50%;
+  padding: auto;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.load-more:hover {
+  background-color: #333;
+  color: #ffd322;
+  transition: background 0.2s ease-in-out;
+}
+
+@media (max-width: 500px) {
+  .load-more {
+    margin-left: 35vw;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+@media (min-width: 768px) {
+  .load-more {
+    margin-left: 40vw;
+    font-size: 0.9rem;
+    font-weight: 650;
+  }
+}
+@media (min-width: 1024px) {
+  .load-more {
+    margin-left: 45vw;
+  }
+}
+@media (min-width: 1200px) {
+  .load-more {
+    margin-left: 45vw;
+  }
+}
