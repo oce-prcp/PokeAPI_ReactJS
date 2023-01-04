@@ -1,6 +1,5 @@
 const User = require("../models/utilisateur.model")
 
-//===== System D'authentification =====\\
 const isAuthenticated = async (req, res,next) => {
     try{
         const username = req.headers.username
