@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const { connect, set } = mongoose;
-const MongoClient = require('mongodb').MongoClient;
 
 // Connect to MongoDB
 mongoose.connection.on("connected", () => {
@@ -25,10 +24,5 @@ mongoose.connection.on("error", (error) => {
 
 set("debug", true);
 connect(
-    "mongodb+srv://WIEZII:<password>@cluster0.nn5mj3f.mongodb.net/?retryWrites=true&w=majority",
-    { useUnifiedTopology: true, useNewUrlParser: true }
+    "mongodb+srv://oce:Gomette2003@cluster0.56xbhyw.mongodb.net/?retryWrites=true&w=majority"
 );
-
-app.listen(3000, () => {
-    console.log("listening on port 3000");
-});
