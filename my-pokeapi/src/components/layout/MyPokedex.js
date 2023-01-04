@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import PokemonThumbnail from "../PokemonThumbnail";
 import "../../style/mypokedex.css";
 
+
+//Function that allows to search from the API a pokemon name and display and display it
 function SearchPokemon() {
   const [pokemon, setPokemon] = useState(null);
   const [, setLoading] = useState(false);
@@ -69,7 +71,7 @@ function SearchPokemon() {
     </div>
   );
 }
-
+// CSS to btn 
 const btn = {
   textDecoration: "none",
   padding: "5px",
@@ -79,6 +81,7 @@ const btn = {
   marginTop: "2rem",
 };
 
+// CSS to input 
 const input = {
   margin: "auto",
   marginTop: "1rem",
@@ -90,11 +93,3 @@ const input = {
 
 export default SearchPokemon;
 
-<div id="container">
-  <button class="learn-more">
-    <span class="circle" aria-hidden="true">
-      <span class="icon arrow"></span>
-    </span>
-    <span class="button-text">Learn More</span>
-  </button>
-</div>;

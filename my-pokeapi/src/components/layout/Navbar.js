@@ -5,7 +5,9 @@ import Navbar from "react-bootstrap/Navbar";
 import React from "react";
 import "../../style/navbar.css";
 
-function ColorSchemesExample() {
+
+// Allow to display the nav bar with the different pages of the pokedex
+function PrintNavBar() {
   return (
     <Navbar className="navbar">
       <Container>
@@ -37,17 +39,6 @@ function ColorSchemesExample() {
           >
             Pokédex
           </Nav.Link>
-          <Nav.Link
-            style={{
-              color: "#ffd322",
-              fontWeight: "bold",
-              WebkitTextStroke: 0.5 + "px #2a68b0",
-              fontSize: 15 + "px",
-            }}
-            href="/fight"
-          >
-            Fight
-          </Nav.Link>
           <button className="btn-connexion">Connexion</button>
         </Nav>
       </Container>
@@ -55,4 +46,4 @@ function ColorSchemesExample() {
   );
 }
 
-export default ColorSchemesExample;
+export default PrintNavBar;

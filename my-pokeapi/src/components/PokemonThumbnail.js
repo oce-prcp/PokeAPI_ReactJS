@@ -33,7 +33,6 @@ const PokemonThumbnail = ({ id, name, image, type, type2 }) => {
             borderRadius: "5px",
             marginTop: "10px",
             fontSize: "14px",
-            color: "#333",
           }}
         >
           Type : {type}
