@@ -3,8 +3,7 @@ import pokemonService from "./pokemonService";
 import PokemonThumbnail from "./PokemonThumbnail";
 
 import "../style/pokedex.css";
-import '../style/pokedex.css';
-
+import "../style/pokedex.css";
 
 //Function that allow to call the API
 function Pokedex() {
@@ -30,7 +29,7 @@ function Pokedex() {
     const data = await res.json();
     setLoadMore(data.next);
 
-  // Function to create a pokemon object
+    // Function to create a pokemon object
     async function createPokemonObject(result) {
       return await Promise.all(
         result.map(async (pokemon) => {
@@ -57,7 +56,6 @@ function Pokedex() {
 
   return (
     <>
-    
       <div className="app-container">
         <h1>Pokémons</h1>
 
@@ -76,9 +74,9 @@ function Pokedex() {
           </div>
         </div>
       </div>
-          {
-          //Function that allows you to display more pokemon when you press the button
-          }
+      {
+        //Function that allows you to display more pokemon when you press the button
+      }
       <button className="load-more" onClick={() => getAllPokemons()}>
         Load more
       </button>

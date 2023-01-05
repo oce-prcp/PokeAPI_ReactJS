@@ -5,12 +5,11 @@ import { useEffect, useState } from "react";
 import PokemonThumbnail from "../PokemonThumbnail";
 import "../../style/mypokedex.css";
 
-
 //Function that allows to search from the API a pokemon name and display and display it
 function SearchPokemon() {
   const [pokemon, setPokemon] = useState(null);
   const [, setLoading] = useState(false);
-  const [txtImput, settxtInput] = useState("");
+  const [txtInput, settxtInput] = useState("");
   const [, setError] = useState(null);
 
   useEffect(() => {
@@ -20,7 +19,7 @@ function SearchPokemon() {
 
       try {
         const response = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${txtImput}`
+          `https://pokeapi.co/api/v2/pokemon/${txtInput}`
         );
         const data = await response.json();
 
@@ -36,10 +35,10 @@ function SearchPokemon() {
       }
     }
 
-    if (txtImput !== "") {
+    if (txtInput !== "") {
       fetchPokemon();
     }
-  }, [txtImput]);
+  }, [txtInput]);
   return (
     <div>
       <div></div>
@@ -67,11 +66,10 @@ function SearchPokemon() {
           type2={pokemon.types[1]?.type.name}
         />
       )}
-
     </div>
   );
 }
-// CSS to btn 
+// CSS to btn
 const btn = {
   textDecoration: "none",
   padding: "5px",
@@ -81,7 +79,7 @@ const btn = {
   marginTop: "2rem",
 };
 
-// CSS to input 
+// CSS to input
 const input = {
   margin: "auto",
   marginTop: "1rem",
@@ -92,4 +90,3 @@ const input = {
 };
 
 export default SearchPokemon;
-
