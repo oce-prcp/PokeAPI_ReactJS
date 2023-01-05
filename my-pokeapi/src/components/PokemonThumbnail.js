@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-const PokemonThumbnail = ({ id, name, image, type, type2,ModifyPokemon}) => {
 
+const PokemonThumbnail = ({ id, name, image, type, type2,ModifyPokemon}) => {
   return (
     <div className="thumb-container">
       <Button className="btn-star" onClick={()=>{
