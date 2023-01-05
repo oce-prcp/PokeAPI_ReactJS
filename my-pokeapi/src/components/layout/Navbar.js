@@ -5,7 +5,6 @@ import Navbar from "react-bootstrap/Navbar";
 import React from "react";
 import "../../style/navbar.css";
 
-
 // Allow to display the nav bar with the different pages of the pokedex
 function PrintNavBar() {
   return (

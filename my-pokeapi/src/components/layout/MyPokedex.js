@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../style/mypokedex.css";
 import { useEffect, useState } from "react";
 import PokemonThumbnail from "../PokemonThumbnail";
@@ -52,11 +51,7 @@ function SearchPokemon() {
         style={input}
         className="input-pokedex"
       />
-      <Link to="/pokedex">
-        <button style={btn} className="btn-input">
-          Search
-        </button>
-      </Link>
+
       {!pokemon === false && (
         <PokemonThumbnail
           id={pokemon.id}
@@ -69,16 +64,6 @@ function SearchPokemon() {
     </div>
   );
 }
-// CSS to btn
-const btn = {
-  textDecoration: "none",
-  padding: "5px",
-  textAlign: "center",
-  width: "6rem",
-  margin: "auto",
-  marginTop: "2rem",
-};
-
 // CSS to input
 const input = {
   margin: "auto",

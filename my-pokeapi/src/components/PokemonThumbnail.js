@@ -1,13 +1,15 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-const PokemonThumbnail = ({ id, name, image, type, type2,ModifyPokemon}) => {
-
+const PokemonThumbnail = ({ id, name, image, type, type2, ModifyPokemon }) => {
   return (
     <div className="thumb-container">
-      <Button className="btn-star" onClick={()=>{
-        ModifyPokemon(id)
-        console.log("myValue")
-      }}>
+      <Button
+        className="btn-star"
+        onClick={() => {
+          ModifyPokemon(id);
+          console.log("myValue");
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"

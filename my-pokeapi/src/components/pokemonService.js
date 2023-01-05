@@ -6,5 +6,5 @@ function detail(pokemon) {
 }
 
 module.exports = {
-  detail
-}
+  detail,
+};
