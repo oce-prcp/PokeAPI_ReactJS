@@ -6,9 +6,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-const PokemonThumbnail = ({ id, name, image, type, type2, ModifyPokemon }) => {
   // Create a function that allows to add or remove a pokemon from the pokedex list
-
 const PokemonThumbnail = ({ id, name, image, type, type2,ModifyPokemon}) => {
   return (
     <div className="thumb-container">
