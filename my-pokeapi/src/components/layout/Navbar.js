@@ -1,10 +1,13 @@
+// This file is used to display the navbar of the pokedex
+// It contains the different pages of the pokedex
+// It also contains the button to connect to the pokedex
+
+// Import in the component the React library, the css file, the Container, Nav and Navbar components from react-bootstrap
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
 import React from "react";
 import "../../style/navbar.css";
-
 
 // Allow to display the nav bar with the different pages of the pokedex
 function PrintNavBar() {
@@ -17,6 +20,7 @@ function PrintNavBar() {
             alt="logo"
             className="logo"
           />
+          {/* Display the different pages of the pokedex */}
           <Nav.Link
             style={{
               color: "#ffd322",

@@ -4,7 +4,6 @@ const BASE_URL = "https://pokeapi.co/api/v2/";
 function detail(pokemon) {
   return fetch(`${BASE_URL}pokemon/${pokemon}`).then((res) => res.json());
 }
-
 module.exports = {
-  detail
-}
+  detail,
+};
