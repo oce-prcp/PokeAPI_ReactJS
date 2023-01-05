@@ -53,11 +53,6 @@ function SearchPokemon() {
         style={input}
         className="input-pokedex"
       />
-      <Link to="/pokedex">
-        <button style={btn} className="btn-input">
-          Search
-        </button>
-      </Link>
       {!pokemon === false && (
         <PokemonThumbnail
           id={pokemon.id}
@@ -71,15 +66,6 @@ function SearchPokemon() {
     </div>
   );
 }
-// CSS to btn 
-const btn = {
-  textDecoration: "none",
-  padding: "5px",
-  textAlign: "center",
-  width: "6rem",
-  margin: "auto",
-  marginTop: "2rem",
-};
 
 // CSS to input 
 const input = {
