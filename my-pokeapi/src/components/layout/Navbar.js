@@ -26,7 +26,7 @@ function PrintNavBar() {
               color: "#ffd322",
               fontWeight: "bold",
               WebkitTextStroke: 0.5 + "px #2a68b0",
-              fontSize: 15 + "px",
+              fontSize: 20 + "px",
             }}
             href="/"
           >
@@ -37,7 +37,7 @@ function PrintNavBar() {
               color: "#ffd322",
               fontWeight: "bold",
               WebkitTextStroke: 0.5 + "px #2a68b0",
-              fontSize: 15 + "px",
+              fontSize: 20 + "px",
             }}
             href="/pokedex"
           >
