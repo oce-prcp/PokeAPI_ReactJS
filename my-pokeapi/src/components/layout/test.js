@@ -1,22 +1,26 @@
+// This component is the main page of the app, it displays the list of pokemons and the search bar
+// It also contains the function that allows to search a pokemon by name
+
+// Import in the component the React library, the css file, the PokemonThumbnail component and the useState and useEffect hooks
 import React from "react";
 import "../../style/mypokedex.css";
 import { useEffect, useState } from "react";
 import PokemonThumbnail from "../PokemonThumbnail";
-import Button from "react-bootstrap/Button";
-import "../../style/mypokedex.css";
 
-//Function that allows to search from the API a pokemon name and display and display it
+// Function that allows to search from the API a pokemon name and display and display it
 function SearchPokemon() {
   const [pokemon, setPokemon] = useState(null);
   const [, setLoading] = useState(false);
   const [txtInput, settxtInput] = useState("");
   const [, setError] = useState(null);
 
+  // Fetch the API
   useEffect(() => {
     async function fetchPokemon() {
       setLoading(true);
       setError(null);
 
+      // Get the pokemon name from the input
       try {
         const response = await fetch(
           `https://pokeapi.co/api/v2/pokemon/${txtInput}`
@@ -27,6 +31,7 @@ function SearchPokemon() {
           throw new Error(data.message);
         }
 
+        // Set the pokemon name in the state
         setPokemon(data);
       } catch (e) {
         setError(e);
@@ -35,10 +40,12 @@ function SearchPokemon() {
       }
     }
 
+    // If the input is not empty, fetch the API
     if (txtInput !== "") {
       fetchPokemon();
     }
   }, [txtInput]);
+  //  Display the search bar and the pokemon thumbnail
   return (
     <div>
       <div></div>
@@ -52,19 +59,9 @@ function SearchPokemon() {
         style={input}
         className="input-pokedex"
       />
-      <Button className="btn-search">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-search"
-          viewBox="0 0 16 16"
-        >
-          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-        </svg>
-      </Button>
-
+      {/* <div className="App">
+        <button>SIGN IN WITH GOOGLE</button>
+      </div> */}
       {/* If the pokemon is not null, display the pokemon thumbnail */}
       {!pokemon === false && (
         <PokemonThumbnail
