@@ -5,10 +5,11 @@ import PokemonThumbnail from "./PokemonThumbnail";
 import "../style/pokedex.css";
 import '../style/pokedex.css';
 
-
 //Function that allow to call the API
 function Pokedex() {
+  
   const [allPokemons, setAllPokemons] = useState([]);
+  const [savedValue, setSavedValue] = useState([]);
   const [loadMore, setLoadMore] = useState(
     "https://pokeapi.co/api/v2/pokemon/"
   );
@@ -53,8 +54,28 @@ function Pokedex() {
   useEffect(() => {
     getAllPokemons();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    const value = JSON.parse(localStorage.getItem('myValue'));
+    if (value) {
+      setSavedValue(value,);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  useEffect(() => {
+    localStorage.setItem('myValue', JSON.stringify(savedValue)); 
+  }, [savedValue]);
 
+
+  function ModifyPokemon(id){
+    const tabtempo = [...savedValue]
+    if(tabtempo.includes(id)){
+      tabtempo.splice(tabtempo.indexOf(id), 1);
+      setSavedValue(tabtempo)
+    }else{
+      tabtempo.push(id);
+      setSavedValue(tabtempo)
+
+    }
+  }
   return (
     <>
     
@@ -71,6 +92,7 @@ function Pokedex() {
                 type={pokemon.types[0].type.name}
                 type2={pokemon.types[1]?.type.name}
                 key={index}
+                ModifyPokemon={ModifyPokemon}
               />
             ))}
           </div>
