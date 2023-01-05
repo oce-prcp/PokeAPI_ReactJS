@@ -12,5 +12,4 @@ const pokedexUser = new Schema ({
             default: Id.now,
         },
 });
-
 module.exports = model("pokedex", pokedexUser, "pokedexUser");
