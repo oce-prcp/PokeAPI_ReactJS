@@ -3,11 +3,10 @@ import pokemonService from "./pokemonService";
 import PokemonThumbnail from "./PokemonThumbnail";
 
 import "../style/pokedex.css";
-import '../style/pokedex.css';
+import "../style/pokedex.css";
 
 //Function that allow to call the API
 function Pokedex() {
-  
   const [allPokemons, setAllPokemons] = useState([]);
   const [savedValue, setSavedValue] = useState([]);
   const [loadMore, setLoadMore] = useState(
@@ -31,7 +30,7 @@ function Pokedex() {
     const data = await res.json();
     setLoadMore(data.next);
 
-  // Function to create a pokemon object
+    // Function to create a pokemon object
     async function createPokemonObject(result) {
       return await Promise.all(
         result.map(async (pokemon) => {
@@ -54,31 +53,28 @@ function Pokedex() {
   useEffect(() => {
     getAllPokemons();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    const value = JSON.parse(localStorage.getItem('myValue'));
+    const value = JSON.parse(localStorage.getItem("myValue"));
     if (value) {
-      setSavedValue(value,);
+      setSavedValue(value);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
-    localStorage.setItem('myValue', JSON.stringify(savedValue)); 
+    localStorage.setItem("myValue", JSON.stringify(savedValue));
   }, [savedValue]);
 
-
-  function ModifyPokemon(id){
-    const tabtempo = [...savedValue]
-    if(tabtempo.includes(id)){
+  function ModifyPokemon(id) {
+    const tabtempo = [...savedValue];
+    if (tabtempo.includes(id)) {
       tabtempo.splice(tabtempo.indexOf(id), 1);
-      setSavedValue(tabtempo)
-    }else{
+      setSavedValue(tabtempo);
+    } else {
       tabtempo.push(id);
-      setSavedValue(tabtempo)
-
+      setSavedValue(tabtempo);
     }
   }
   return (
     <>
-    
       <div className="app-container">
         <h1>Pokémons</h1>
 
@@ -98,9 +94,9 @@ function Pokedex() {
           </div>
         </div>
       </div>
-          {
-          //Function that allows you to display more pokemon when you press the button
-          }
+      {
+        //Function that allows you to display more pokemon when you press the button
+      }
       <button className="load-more" onClick={() => getAllPokemons()}>
         Load more
       </button>
