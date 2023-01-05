@@ -1,26 +1,12 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import { useEffect, useState } from "react";
-const PokemonThumbnail = ({ id, name, image, type, type2 }) => {
-const [savedValue, setSavedValue] = useState('');
+const PokemonThumbnail = ({ id, name, image, type, type2,ModifyPokemon}) => {
 
-  useEffect(() => {
-    const value = localStorage.getItem('myValue');
-    if (value) {
-      setSavedValue(value);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('myValue', savedValue);
-  }, [savedValue]);
-
-  <input value={savedValue} onChange={event => setSavedValue(event.target.value)} />
   return (
     <div className="thumb-container">
       <Button className="btn-star" onClick={()=>{
-        //finir cette function de merde 
+        ModifyPokemon(id)
+        console.log("myValue")
       }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
