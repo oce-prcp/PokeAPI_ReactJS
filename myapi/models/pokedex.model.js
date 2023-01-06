@@ -8,8 +8,8 @@ const pokedexUser = new Schema ({
             },
 
         createdAt: {
-            type: Id,
-            default: Id.now,
+            type: Date,
+            default: Date.now,
         },
 });
 module.exports = model("pokedex", pokedexUser, "pokedexUser");
