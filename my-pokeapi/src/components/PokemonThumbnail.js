@@ -14,7 +14,7 @@ const PokemonThumbnail = ({ id, name, image, type, type2, ModifyPokemon }) => {
         className="btn-star"
         onClick={() => {
           ModifyPokemon(id);
-          console.log("myValue");
+          console.log("MyRegisteredPokemon");
         }}
       >
         <svg

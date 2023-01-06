@@ -47,7 +47,6 @@ function Pokedex() {
     // Function to create a pokemon object
     const pokemons = await createPokemonObject(data.results);
     setAllPokemons([...allPokemons, ...pokemons]);
-    console.log(allPokemons);
   };
 
   // Function that allow to put in order the pokemon
@@ -56,14 +55,14 @@ function Pokedex() {
   useEffect(() => {
     getAllPokemons();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    const value = JSON.parse(localStorage.getItem("myValue"));
+    const value = JSON.parse(localStorage.getItem("MyRegisteredPokemon"));
     if (value) {
       setSavedValue(value);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
-    localStorage.setItem("myValue", JSON.stringify(savedValue));
+    localStorage.setItem("MyRegisteredPokemon", JSON.stringify(savedValue));
   }, [savedValue]);
 
   // Function that allows you to add or remove a pokemon from the list

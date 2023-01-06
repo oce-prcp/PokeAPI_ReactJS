@@ -4,7 +4,7 @@ const Pokedex = require("../models/pokedex.model.js")
 const CreatePokedex = async(req, res) => {
     try {
         const user = req.user
-        const pokedex = new pokedex()
+        const pokedex = new Pokedex()
         pokedex.user = user.id
         await pokedex.save()
         res.status(200).send("Vous avez créé un pokedex")
