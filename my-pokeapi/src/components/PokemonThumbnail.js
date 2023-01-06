@@ -11,13 +11,6 @@ const PokemonThumbnail = ({ id, name, image, type, type2, onClick }) => {
   return (
     <div className="thumb-container">
       <Button className="btn-star" onClick={onClick}>
-      <Button
-        className="btn-star"
-        onClick={() => {
-          ModifyPokemon(id);
-          console.log("MyRegisteredPokemon");
-        }}
-      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"

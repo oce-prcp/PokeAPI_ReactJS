@@ -3,8 +3,15 @@ const isAuthenticated = require("./middleware/auth.middleware.js");
 const userdto = require("./dto/user.dto.js");
 const usercontroller = require("./controllers/users.controllers.js");
 require("./database");
+const cors = require("cors");
 
 const app = express();
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+  })
+)
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -22,6 +29,6 @@ app.listen(5000, () => {
   console.log("API écoute sur le port 5000");
 });
 
-app.get("/users/pokemons", usercontroller.GetPokemons);
+app.get("/users/pokemons", userdto.GetPokemons, usercontroller.GetPokemons);
 
-app.post("/users/pokemons", usercontroller.AddPokemon);
+app.patch("/users/pokemons", userdto.AddPokemon, usercontroller.AddPokemon);
