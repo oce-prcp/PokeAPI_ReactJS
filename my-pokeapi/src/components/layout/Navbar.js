@@ -43,6 +43,18 @@ function PrintNavBar() {
           >
             Pokédex
           </Nav.Link>
+          <Nav.Link
+            style={{
+              color: "#ffd322",
+              fontWeight: "bold",
+              WebkitTextStroke: 0.5 + "px #2a68b0",
+              fontSize: 20 + "px",
+            }}
+            href="/battle"
+          >
+            Battle
+          </Nav.Link>
+
           <button className="btn-connexion">Connexion</button>
         </Nav>
       </Container>
