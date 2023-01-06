@@ -66,7 +66,7 @@ function Pokedex() {
   }, [savedValue]);
 
   // Function that allows you to add or remove a pokemon from the list
-  function ModifyPokemon(id) {
+  function modifyPokemon(id) {
     const tabtempo = [...savedValue];
     if (tabtempo.includes(id)) {
       tabtempo.splice(tabtempo.indexOf(id), 1);
@@ -94,7 +94,7 @@ function Pokedex() {
                 type={pokemon.types[0].type.name}
                 type2={pokemon.types[1]?.type.name}
                 key={index}
-                ModifyPokemon={ModifyPokemon}
+                onClick={modifyPokemon}
               />
             ))}
           </div>
