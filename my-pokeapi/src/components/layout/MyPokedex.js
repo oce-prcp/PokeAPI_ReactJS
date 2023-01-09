@@ -39,8 +39,6 @@ function SearchPokemon() {
     }
   }, [txtInput]);
 
-  
-
 
   return (
     <div>
