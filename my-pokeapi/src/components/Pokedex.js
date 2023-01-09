@@ -24,6 +24,8 @@ function Pokedex() {
           headers: {
             pseudo: "océane",
           }
+
+          
         })
         let res = await response.json()
         res.data.map(async (pokemon) =>{
@@ -53,16 +55,6 @@ function Pokedex() {
     }
       fetchWare();
     }, [])
-      
-      
-      
-      
-      
-      
-
-
-
-
 
   // Search for a pokemon using the API
   // eslint-disable-next-line no-unused-vars

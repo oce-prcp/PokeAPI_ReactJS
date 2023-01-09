@@ -39,7 +39,8 @@ const GetPokemons = async (req, res) => {
     console.log(error);
     res.status(500).send("Erreur rencontrée");
   }
-};
+}
+
 
 module.exports = {
   CreateUser,
