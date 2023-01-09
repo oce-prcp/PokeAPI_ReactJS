@@ -11,6 +11,7 @@ function SearchPokemon() {
   const [, setLoading] = useState(false);
   const [txtInput, settxtInput] = useState("");
   const [, setError] = useState(null);
+  
 
   useEffect(() => {
     async function fetchPokemon() {

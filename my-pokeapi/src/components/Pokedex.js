@@ -17,40 +17,51 @@ function Pokedex() {
 
   useEffect(() => {
     async function fetchWare(){
-      let pokemons = []
-      let response = await fetch('http://localhost:5000/users/pokemons',{
-        method: 'GET',
-        headers: {
-          pseudo: "océane",
-        }
-      })
-      let res = await response.json()
-
-
-
-      res.data.map(async (pokemon) =>{
-        let secondResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-        let res2 = await secondResponse.json()
-        pokemons.push(res2)
-        pokemons.map((poke)=>{
-          console.log(poke.name, poke.id)
-
-          poke.stats.map((stat)=>{
-            console.log(stat.base_stat)
-            return stat
-          })
-
-
-          poke.types.map((type) => {
-            console.log(type.type.name)
+      try {
+        let pokemons = []
+        let response = await fetch('http://localhost:5000/users/pokemons',{
+          method: 'GET',
+          headers: {
+            pseudo: "océane",
+          }
+        })
+        let res = await response.json()
+        res.data.map(async (pokemon) =>{
+          let secondResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+          let res2 = await secondResponse.json()
+          pokemons.push(res2)
+          pokemons.map((poke)=>{
+            console.log(poke.name, poke.id)
+  
+            poke.stats.map((stat)=>{
+              console.log(stat.base_stat)
+              return stat
+            })
+  
+  
+            poke.types.map((type) => {
+              console.log(type.type.name)
+              return poke
+            })
             return poke
           })
-          return poke
         })
-      })
+      }
+      catch (e) {
+  
+      }
     }
-    fetchWare();
-  }, [])
+      fetchWare();
+    }, [])
+      
+      
+      
+      
+      
+      
+
+
+
 
 
   // Search for a pokemon using the API
@@ -100,6 +111,7 @@ function Pokedex() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
+    console.log(savedValue)
     localStorage.setItem("MyRegisteredPokemon", JSON.stringify(savedValue));
   }, [savedValue]);
 
