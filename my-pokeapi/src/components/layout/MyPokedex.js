@@ -11,6 +11,8 @@ function SearchPokemon() {
   const [, setLoading] = useState(false);
   const [txtInput, settxtInput] = useState("");
   const [, setError] = useState(null);
+  const [allPokemons, setAllPokemons] = useState([]);
+  const sortPokemon = (p1, p2) => p1.id < p2.id;
 
   // useEffect(() => {
   //   const res = fetch("http://localhost:5000/users/pokemons", {
@@ -65,10 +67,6 @@ function SearchPokemon() {
     }
   }, [txtInput]);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 53063ff998c3de2feff4690a8625a953d072094a
   return (
     <div>
       <div></div>
