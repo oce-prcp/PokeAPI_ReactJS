@@ -1,18 +1,12 @@
 // This component is used to display the pokemon thumbnail
 // When the user search a pokemon in the search bar of the pokedex page and then click on the thumbnail button to add
 // the pokemon to the pokedex list and then click on the thumbnail button to remove the pokemon from the pokedex list
-
 // Import in the component the React library, the Button component from react-bootstrap and the css file
 import React from "react";
 import Button from "react-bootstrap/Button";
 
 // Create a function that allows to add or remove a pokemon from the pokedex list
 const PokemonThumbnail = ({ id, name, image, type, type2 }) => {
-  // function AddPokemon() {
-  //   onclick(id)
-
-  //   console.log("Button was clicked");
-  // }
   return (
     <div className="thumb-container">
       <Button
@@ -22,7 +16,7 @@ const PokemonThumbnail = ({ id, name, image, type, type2 }) => {
             method: "PATCH",
             body: JSON.stringify({
               id: id,
-              pseudo: "mathieu",
+              pseudo: "Julien",
             }),
             headers: {
               "Content-Type": "application/json",

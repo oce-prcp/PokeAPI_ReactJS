@@ -1,6 +1,5 @@
 // This component is used to display all the pokemons
 // It contains the function that allows to display more pokemons when you press the button
-
 // Import in the component the React library, the css file, the PokemonThumbnail component, the useState and useEffect hooks and the pokemonService
 import { useState, useEffect } from "react";
 import pokemonService from "./pokemonService";
@@ -15,8 +14,8 @@ function Pokedex() {
     "https://pokeapi.co/api/v2/pokemon/"
   );
 
-  // Search for a pokemon using the API
-  // eslint-disable-next-line no-unused-vars
+// Search for a pokemon using the API
+// eslint-disable-next-line no-unused-vars
   const handleClick = async () => {
     try {
       const responce = await pokemonService.detail(allPokemons);
@@ -26,13 +25,13 @@ function Pokedex() {
     }
   };
 
-  // Function that allows you to display more pokemon when you press the button
+// Function that allows you to display more pokemon when you press the button
   const getAllPokemons = async () => {
     const res = await fetch(loadMore);
     const data = await res.json();
     setLoadMore(data.next);
 
-    // Function to create a pokemon object
+// Function to create a pokemon object
     async function createPokemonObject(result) {
       return await Promise.all(
         result.map(async (pokemon) => {
@@ -44,12 +43,12 @@ function Pokedex() {
         })
       );
     }
-    // Function to create a pokemon object
+// Function to create a pokemon object
     const pokemons = await createPokemonObject(data.results);
     setAllPokemons([...allPokemons, ...pokemons]);
   };
 
-  // Function that allow to put in order the pokemon
+// Function that allow to put in order the pokemon
   const sortPokemon = (p1, p2) => p1.id < p2.id;
 
   useEffect(() => {
@@ -59,26 +58,22 @@ function Pokedex() {
     if (value) {
       setSavedValue(value);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  useEffect(() => {
-    console.log(savedValue);
-    localStorage.setItem("MyRegisteredPokemon", JSON.stringify(savedValue));
-  }, [savedValue]);
-
-  // Function that allows you to add or remove a pokemon from the list
+// Function that allows you to add or remove a pokemon from the list
+// eslint-disable-next-line no-unused-vars
   function modifyPokemon(id) {
     const tabtempo = [...savedValue];
     if (tabtempo.includes(id)) {
       tabtempo.splice(tabtempo.indexOf(id), 1);
       setSavedValue(tabtempo);
-      // eslint-disable-next-line no-else-return
+// eslint-disable-next-line no-else-return
     } else {
       tabtempo.push(id);
       setSavedValue(tabtempo);
     }
   }
-  // Function that allows you to add or remove a pokemon from the list
+// Function that allows you to add or remove a pokemon from the list
   return (
     <>
       <div className="app-container">
