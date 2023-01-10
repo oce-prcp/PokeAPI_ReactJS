@@ -11,7 +11,32 @@ function SearchPokemon() {
   const [, setLoading] = useState(false);
   const [txtInput, settxtInput] = useState("");
   const [, setError] = useState(null);
-  
+
+  // useEffect(() => {
+  //   const res = fetch("http://localhost:5000/users/pokemons", {
+  //     method: "GET",
+  //     headers: {
+  //       pseudo: "Julien",
+  //     },
+  //   });
+  //   console.log(res);
+  //   setPokemon(res);
+  // }, []);
+
+  useEffect(() => {
+    async function fetchPokemonTest() {
+      const res = await fetch("http://localhost:5000/users/pokemons", {
+        method: "GET",
+        headers: {
+          pseudo: "Julien",
+        },
+      });
+      console.log(res.data);
+    }
+
+    fetchPokemonTest();
+  }, []);
+
   useEffect(() => {
     async function fetchPokemon() {
       setLoading(true);
@@ -32,15 +57,13 @@ function SearchPokemon() {
       } finally {
         setLoading(false);
       }
+      return true;
     }
 
     if (txtInput !== "") {
       fetchPokemon();
     }
   }, [txtInput]);
-
-  
-
 
   return (
     <div>
@@ -55,6 +78,13 @@ function SearchPokemon() {
         style={input}
         className="input-pokedex"
       />
+      {/* <div>
+        <h1>{pokemon.name}</h1>
+        <img src={pokemon.sprites.other.dream_world.front_default} alt="" />
+        <p>id={pokemon.id}</p>
+        <p>type={pokemon.types[0].type.name}</p>
+        <p>type2={pokemon.types[1]?.type.name}</p>
+      </div> */}
       <Button className="btn-search">
         <svg
           xmlns="http://www.w3.org/2000/svg"

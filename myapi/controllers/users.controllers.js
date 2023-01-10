@@ -32,15 +32,15 @@ const AddPokemon = async (req, res) => {
 const GetPokemons = async (req, res) => {
   try {
     const user = await User.findOne({ pseudo: req.headers.pseudo });
+    console.log(user);
     const pokedex = user.pokedex;
     console.log(pokedex);
-    await res.status(200).json({ message: "Success", data: pokedex });
+    res.status(200).json({ pokedex });
   } catch (error) {
     console.log(error);
     res.status(500).send("Erreur rencontrée");
   }
-}
-
+};
 
 module.exports = {
   CreateUser,

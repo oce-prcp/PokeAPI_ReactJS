@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Pokedex from "./components/Pokedex";
 import SearchPokemon from "./components/layout/MyPokedex";
-
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Pokedex />} />
         <Route path="/pokedex" element={<SearchPokemon />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );
