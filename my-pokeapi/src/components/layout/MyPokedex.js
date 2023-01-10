@@ -65,6 +65,10 @@ function SearchPokemon() {
     }
   }, [txtInput]);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 53063ff998c3de2feff4690a8625a953d072094a
   return (
     <div>
       <div></div>
