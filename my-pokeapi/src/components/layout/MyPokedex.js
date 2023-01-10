@@ -11,32 +11,59 @@ function SearchPokemon() {
   const [, setLoading] = useState(false);
   const [txtInput, settxtInput] = useState("");
   const [, setError] = useState(null);
+  const [allPokemons,setAllPokemons] = useState([]);
+  const sortPokemon = (p1, p2) => p1.id < p2.id;
 
-  // useEffect(() => {
-  //   const res = fetch("http://localhost:5000/users/pokemons", {
-  //     method: "GET",
-  //     headers: {
-  //       pseudo: "Julien",
-  //     },
-  //   });
-  //   console.log(res);
-  //   setPokemon(res);
-  // }, []);
+
+  useEffect(() => {
+    async function fetchWare() {
+      try {
+        let pokemons = [];
+        let response = await fetch("http://localhost:5000/users/pokemons", {
+          method: "GET",
+          headers: {
+            pseudo: "Julien",
+          },
+        });
+        let res = await response.json();
+        res.data.map(async (pokemon) => {
+          let secondResponse = await fetch(
+            `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+          );
+          let res2 = await secondResponse.json();
+          pokemons.push(res2);
+          pokemons.map((poke) => {
+            console.log(poke.name, poke.id);
+
+            poke.stats.map((stat) => {
+              console.log(stat.base_stat);
+              return stat;
+            });
+
+            poke.types.map((type) => {
+              console.log(type.type.name);
+              return poke;
+            });
+            return poke;
+          });
+        });
+        setAllPokemons()
+      } catch (e) {}
+    }
+    fetchWare();
+  }, []);
 
   useEffect(() => {
     async function fetchPokemonTest() {
-      const res = await fetch("http://localhost:5000/users/pokemons", {
+      const response = await fetch("http://localhost:5000/users/pokemons", {
         method: "GET",
         headers: {
           pseudo: "Julien",
         },
       });
-      console.log(res.data);
     }
-
     fetchPokemonTest();
   }, []);
-
   useEffect(() => {
     async function fetchPokemon() {
       setLoading(true);
@@ -65,10 +92,6 @@ function SearchPokemon() {
     }
   }, [txtInput]);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 53063ff998c3de2feff4690a8625a953d072094a
   return (
     <div>
       <div></div>
@@ -82,13 +105,7 @@ function SearchPokemon() {
         style={input}
         className="input-pokedex"
       />
-      {/* <div>
-        <h1>{pokemon.name}</h1>
-        <img src={pokemon.sprites.other.dream_world.front_default} alt="" />
-        <p>id={pokemon.id}</p>
-        <p>type={pokemon.types[0].type.name}</p>
-        <p>type2={pokemon.types[1]?.type.name}</p>
-      </div> */}
+
       <Button className="btn-search">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +129,40 @@ function SearchPokemon() {
           type2={pokemon.types[1]?.type.name}
         />
       )}
+
+  <div className="app-container">
+          <h1>Pokémons</h1>
+          {/* Display all the pokemons */}
+          <div className="pokemon-container">
+            <div className="all-container">
+              {/* Sort the pokemon by id */}
+              {allPokemons.sort(sortPokemon).map((pokemon, index) => (
+                <PokemonThumbnail
+                  id={pokemon.id}
+                  name={pokemon.name}
+                  image={pokemon.sprites.other.dream_world.front_default}
+                  type={pokemon.types[0].type.name}
+                  type2={pokemon.types[1]?.type.name}
+                  key={index}
+                />
+              ))}
+            </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
+
   );
 }
 // CSS to input
