@@ -22,7 +22,7 @@ const PokemonThumbnail = ({ id, name, image, type, type2 }) => {
             method: "PATCH",
             body: JSON.stringify({
               id: id,
-              pseudo: "Julien",
+              pseudo: "mathieu",
             }),
             headers: {
               "Content-Type": "application/json",
