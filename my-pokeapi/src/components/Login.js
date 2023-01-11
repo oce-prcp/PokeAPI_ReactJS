@@ -59,6 +59,11 @@ const Login = () => {
 
   return (
     <>
+      <img
+        src="https://www.pngplay.com/wp-content/uploads/10/Pokemon-Free-Picture-PNG.png"
+        alt="logo"
+        className="img-pokemon"
+      />
       {success ? (
         <section>
           <h1>You are logged in !</h1>
@@ -68,7 +73,7 @@ const Login = () => {
           </p>
         </section>
       ) : (
-        <section>
+        <section className="cadre">
           <p
             ref={errRef}
             className={errMsg ? "errmsg" : "offscreen"}
@@ -77,6 +82,7 @@ const Login = () => {
             {errMsg}
           </p>
           <h1>Sign In</h1>
+
           <form onSubmit={handleSubmit}>
             <label htmlFor="username" className="txt-sign">
               Username :

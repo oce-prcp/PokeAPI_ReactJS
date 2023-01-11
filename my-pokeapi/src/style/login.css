@@ -26,3 +26,18 @@
   font-size: 1rem;
   font-weight: bold;
 }
+
+.cadre {
+  margin: auto;
+  width: 50rem;
+  height: 30rem;
+  border-radius: 1rem;
+  padding: 5px;
+}
+
+.img-pokemon {
+  width: 15rem;
+  height: 10rem;
+  margin-top: 0.8rem;
+  margin-left: 50rem;
+}

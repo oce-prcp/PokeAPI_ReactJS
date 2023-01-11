@@ -89,6 +89,11 @@ const Register = () => {
 
   return (
     <>
+      <img
+        src="https://www.pngplay.com/wp-content/uploads/10/Pokemon-Free-Picture-PNG.png"
+        alt="logo"
+        className="img-pokemon"
+      />
       {success ? (
         <section>
           <h1>Success !</h1>
@@ -97,7 +102,7 @@ const Register = () => {
           </p>
         </section>
       ) : (
-        <section>
+        <section className="cadre">
           <p
             ref={errRef}
             className={errMsg ? "errmsg" : "offscreen"}
