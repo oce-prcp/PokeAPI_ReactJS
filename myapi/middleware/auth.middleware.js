@@ -1,7 +1,7 @@
-//===== packages import =====\\
 const User = require("../models/utilisateur.model.js")
 
-//===== System D'authentification =====\\
+// Fonction d'authentification pour la connexion 
+// Authentication function for the connection
 const isAuthenticated = async (req, res,next) => {
     try{
         const username = req.headers.username

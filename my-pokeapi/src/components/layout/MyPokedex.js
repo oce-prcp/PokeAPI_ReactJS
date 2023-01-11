@@ -21,7 +21,7 @@ function SearchPokemon() {
         let response = await fetch("http://localhost:5000/users/pokemons", {
           method: "GET",
           headers: {
-            pseudo: "mathieu",
+            pseudo: "Julien",
           },
         });
         let res = await response.json();
@@ -33,6 +33,7 @@ function SearchPokemon() {
             );
             let res2 = await secondResponse.json();
             pokemons.push(res2);
+
           })
         );
         setAllPokemons(pokemons);

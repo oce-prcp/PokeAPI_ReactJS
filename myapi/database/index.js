@@ -1,27 +1,38 @@
 const mongoose = require("mongoose");
 const { connect, set } = mongoose;
 
-// Connect to MongoDB
+// Conexxion à la base de données
+// connection to the database
 mongoose.connection.on("connected", () => {
-    console.log("Connection mongodb Established");
+    console.log("La connexion à la base de données est établi");
 });
 
+// Reconnexion a la base de données
+// Reconnexion to the database
 mongoose.connection.on("reconnected", () => {
-    console.log("Connection Restablished");
+    console.log("La connexion à la base de données en cours");
 });
 
+// Deconnexion a la base de données
+// Deconnexion to the database
 mongoose.connection.on("disconnected", () => {
-    console.log("Connection Restablished");
+    console.log("La connexion à la base de données est terminé");
 });
 
+// Connexion a la base de données fermé 
+// Connection to the database Closed
 mongoose.connection.on("close", () => {
-    console.log("Connection Closed");
+    console.log("La connexion à la base de données est fermé");
 });
 
+// La connection à la base de données à rencontrer une erreur
+// The connection to the database encoutered an error 
 mongoose.connection.on("error", (error) => {
-    console.log("DB ERROR", error);
+    console.log("La connexion à la base de données à rencontrer une erreur", error);
 });
 
+// Lien de la base de données de mongoDB
+// Link to the database mongoDb
 set("debug", true);
 connect(
     "mongodb+srv://oce:Gomette2003@cluster0.56xbhyw.mongodb.net/?retryWrites=true&w=majority"
