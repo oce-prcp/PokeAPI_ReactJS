@@ -5,7 +5,8 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "./api/axios";
+import axios from "../axios";
+import "../style/login.css";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -90,9 +91,9 @@ const Register = () => {
     <>
       {success ? (
         <section>
-          <h1>Success!</h1>
+          <h1>Success !</h1>
           <p>
-            <a href="#">Sign In</a>
+            <a href="/login">Sign In</a>
           </p>
         </section>
       ) : (
@@ -106,8 +107,8 @@ const Register = () => {
           </p>
           <h1>Register</h1>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="username">
-              Username:
+            <label htmlFor="username" className="txt-sign">
+              Username :
               <FontAwesomeIcon
                 icon={faCheck}
                 className={validName ? "valid" : "hide"}
@@ -144,8 +145,8 @@ const Register = () => {
               Letters, numbers, underscores, hyphens allowed.
             </p>
 
-            <label htmlFor="password">
-              Password:
+            <label htmlFor="password" className="txt-sign">
+              Password :
               <FontAwesomeIcon
                 icon={faCheck}
                 className={validPwd ? "valid" : "hide"}
@@ -176,7 +177,7 @@ const Register = () => {
               Must include uppercase and lowercase letters, a number and a
               special character.
               <br />
-              Allowed special characters:{" "}
+              Allowed special characters :{" "}
               <span aria-label="exclamation mark">!</span>{" "}
               <span aria-label="at symbol">@</span>{" "}
               <span aria-label="hashtag">#</span>{" "}
@@ -184,8 +185,8 @@ const Register = () => {
               <span aria-label="percent">%</span>
             </p>
 
-            <label htmlFor="confirm_pwd">
-              Confirm Password:
+            <label htmlFor="confirm_pwd" className="txt-sign">
+              Confirm Password :
               <FontAwesomeIcon
                 icon={faCheck}
                 className={validMatch && matchPwd ? "valid" : "hide"}
@@ -217,17 +218,18 @@ const Register = () => {
             </p>
 
             <button
+              className="btn-sign"
               disabled={!validName || !validPwd || !validMatch ? true : false}
             >
               Sign Up
             </button>
           </form>
           <p>
-            Already registered?
+            Already registered ?
             <br />
             <span className="line">
               {/*put router link here*/}
-              <a href="#">Sign In</a>
+              <a href="/login">Sign In</a>
             </span>
           </p>
         </section>
