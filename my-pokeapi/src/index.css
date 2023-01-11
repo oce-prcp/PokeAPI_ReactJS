@@ -33,11 +33,12 @@ form {
   justify-content: space-evenly;
   flex-grow: 1;
   padding-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 a,
 a:visited {
-  color: #fff;
+  color: #ffd322;
 }
 
 input[type="text"],
@@ -45,7 +46,7 @@ input[type="password"],
 button,
 textarea {
   font-family: "Nunito", sans-serif;
-  font-size: 22px;
+  font-size: 1rem;
   padding: 0.25rem;
   border-radius: 0.5rem;
 }

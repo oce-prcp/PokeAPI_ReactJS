@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useContext } from "react";
 import AuthContext from "./context/AuthProvider";
+import "../style/login.css";
 
 import axios from "../axios";
 const LOGIN_URL = "/auth";
@@ -60,10 +61,10 @@ const Login = () => {
     <>
       {success ? (
         <section>
-          <h1>You are logged in!</h1>
+          <h1>You are logged in !</h1>
           <br />
           <p>
-            <a href="#">Go to Home</a>
+            <a href="/my-pokeapi">Go to Home</a>
           </p>
         </section>
       ) : (
@@ -77,7 +78,9 @@ const Login = () => {
           </p>
           <h1>Sign In</h1>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username" className="txt-sign">
+              Username :
+            </label>
             <input
               type="text"
               id="username"
@@ -88,7 +91,9 @@ const Login = () => {
               required
             />
 
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password" className="txt-sign">
+              Password :
+            </label>
             <input
               type="password"
               id="password"
@@ -96,14 +101,14 @@ const Login = () => {
               value={pwd}
               required
             />
-            <button>Sign In</button>
+            <button className="btn-sign-up">Sign In</button>
           </form>
-          <p>
-            Need an Account?
+          <p className="">
+            Need an Account ?
             <br />
             <span className="line">
               {/*put router link here*/}
-              <a href="#">Sign Up</a>
+              <a href="/register">Sign Up</a>
             </span>
           </p>
         </section>
