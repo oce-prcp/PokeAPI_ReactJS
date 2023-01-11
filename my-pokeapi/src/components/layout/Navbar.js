@@ -7,10 +7,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../style/navbar.css";
 
 // Allow to display the nav bar with the different pages of the pokedex
 function PrintNavBar() {
+  const navigate = useNavigate();
   return (
     <Navbar className="navbar">
       <Container>
@@ -55,7 +57,9 @@ function PrintNavBar() {
             Battle
           </Nav.Link>
 
-          <button className="btn-connexion">Connexion</button>
+          <button className="btn-connexion" onClick={() => navigate("/login")}>
+            Connexion
+          </button>
         </Nav>
       </Container>
     </Navbar>

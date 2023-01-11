@@ -3,7 +3,6 @@ import "../../style/mypokedex.css";
 import { useEffect, useState } from "react";
 import PokemonThumbnail from "../PokemonThumbnail";
 import Button from "react-bootstrap/Button";
-import "../../style/mypokedex.css";
 
 //Function that allows to search from the API a pokemon name and display and display it
 function SearchPokemon() {
@@ -11,9 +10,8 @@ function SearchPokemon() {
   const [, setLoading] = useState(false);
   const [txtInput, settxtInput] = useState("");
   const [, setError] = useState(null);
-  const [allPokemons,setAllPokemons] = useState([]);
+  const [allPokemons, setAllPokemons] = useState([]);
   const sortPokemon = (p1, p2) => p1.id < p2.id;
-
 
   useEffect(() => {
     async function fetchWare() {
@@ -26,6 +24,7 @@ function SearchPokemon() {
           },
         });
         let res = await response.json();
+
         await Promise.all(
           res.pokedex.map(async (pokemon) => {
             let secondResponse = await fetch(
@@ -33,12 +32,11 @@ function SearchPokemon() {
             );
             let res2 = await secondResponse.json();
             pokemons.push(res2);
-
           })
-        )
-        setAllPokemons(pokemons)
+        );
+        setAllPokemons(pokemons);
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
     }
     fetchWare();
@@ -109,39 +107,26 @@ function SearchPokemon() {
         />
       )}
 
-  <div className="app-container">
-          <h1>Pokémons</h1>
-          {/* Display all the pokemons */}
-          <div className="pokemon-container">
-            <div className="all-container">
-              {/* Sort the pokemon by id */}
-              {allPokemons.sort(sortPokemon).map((pokemon, index) => (
-                <PokemonThumbnail
-                  id={pokemon.id}
-                  name={pokemon.name}
-                  image={pokemon.sprites.other.dream_world.front_default}
-                  type={pokemon.types[0].type.name}
-                  type2={pokemon.types[1]?.type.name}
-                  key={index}
-                />
-              ))}
-            </div>
+      <div className="app-container">
+        <h1>Pokémons</h1>
+        {/* Display all the pokemons */}
+        <div className="pokemon-container">
+          <div className="all-container">
+            {/* Sort the pokemon by id */}
+            {allPokemons.sort(sortPokemon).map((pokemon, index) => (
+              <PokemonThumbnail
+                id={pokemon.id}
+                name={pokemon.name}
+                image={pokemon.sprites.other.dream_world.front_default}
+                type={pokemon.types[0].type.name}
+                type2={pokemon.types[1]?.type.name}
+                key={index}
+              />
+            ))}
           </div>
+        </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-
   );
 }
 // CSS to input
