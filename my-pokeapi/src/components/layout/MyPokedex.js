@@ -3,7 +3,6 @@ import "../../style/mypokedex.css";
 import { useEffect, useState } from "react";
 import PokemonThumbnail from "../PokemonThumbnail";
 import Button from "react-bootstrap/Button";
-import "../../style/mypokedex.css";
 
 //Function that allows to search from the API a pokemon name and display and display it
 function SearchPokemon() {
@@ -33,7 +32,6 @@ function SearchPokemon() {
             );
             let res2 = await secondResponse.json();
             pokemons.push(res2);
-
           })
         );
         setAllPokemons(pokemons);
