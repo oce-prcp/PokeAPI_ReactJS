@@ -21,47 +21,26 @@ function SearchPokemon() {
         let response = await fetch("http://localhost:5000/users/pokemons", {
           method: "GET",
           headers: {
-            pseudo: "Julien",
+            pseudo: "mathieu",
           },
         });
         let res = await response.json();
-        res.data.map(async (pokemon) => {
-          let secondResponse = await fetch(
-            `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-          );
-          let res2 = await secondResponse.json();
-          pokemons.push(res2);
-          pokemons.map((poke) => {
-            console.log(poke.name, poke.id);
 
-            poke.stats.map((stat) => {
-              console.log(stat.base_stat);
-              return stat;
-            });
-
-            poke.types.map((type) => {
-              console.log(type.type.name);
-              return poke;
-            });
-            return poke;
-          });
-        });
-        setAllPokemons();
-      } catch (e) {}
+        await Promise.all(
+          res.pokedex.map(async (pokemon) => {
+            let secondResponse = await fetch(
+              `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+            );
+            let res2 = await secondResponse.json();
+            pokemons.push(res2);
+          })
+        );
+        setAllPokemons(pokemons);
+      } catch (e) {
+        console.log(e);
+      }
     }
     fetchWare();
-  }, []);
-
-  useEffect(() => {
-    async function fetchPokemonTest() {
-      const response = await fetch("http://localhost:5000/users/pokemons", {
-        method: "GET",
-        headers: {
-          pseudo: "Julien",
-        },
-      });
-    }
-    fetchPokemonTest();
   }, []);
   useEffect(() => {
     async function fetchPokemon() {
