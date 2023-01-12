@@ -89,6 +89,7 @@ const Register = () => {
 
   return (
     <>
+    <div className="background-register"></div>
       <img
       
         src="https://www.pngplay.com/wp-content/uploads/10/Pokemon-Free-Picture-PNG.png"
