@@ -39,6 +39,7 @@ form {
 a,
 a:visited {
   color: #ffd322;
+  font-weight: bold;
 }
 
 input[type="text"],
