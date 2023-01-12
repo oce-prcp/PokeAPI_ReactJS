@@ -1,5 +1,5 @@
 const express = require("express");
-const isAuthenticated = require("./middleware/auth.middleware.js");
+// const {isAuthenticated} = require("./middleware/auth.middleware.js");
 const userdto = require("./dto/user.dto.js");
 const usercontroller = require("./controllers/users.controllers.js");
 

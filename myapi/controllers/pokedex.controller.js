@@ -1,4 +1,5 @@
 const Pokedex = require("../models/pokedex.model.js")
+const User = require("../models/utilisateur.model.js")
 
 // Permets de créer un pokédex 
 // Allow you to create a pokedex for a user
