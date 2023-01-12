@@ -60,7 +60,7 @@ const Register = () => {
     try {
       const response = await axios.post(
         REGISTER_URL,
-        JSON.stringify({ user, password:pwd }),
+        JSON.stringify({ pseudo: user, password:pwd }),
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -78,12 +78,9 @@ const Register = () => {
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
-        console.log("Banane")
       } else if (err.response?.status === 409) {
-        console.log("Banane")
         setErrMsg("Username Taken");
       } else {
-        console.log("Banane")
         setErrMsg("Registration Failed");
       }
       errRef.current.focus();
@@ -93,6 +90,7 @@ const Register = () => {
   return (
     <>
       <img
+      
         src="https://www.pngplay.com/wp-content/uploads/10/Pokemon-Free-Picture-PNG.png"
         alt="logo"
         className="img-pokemon"
