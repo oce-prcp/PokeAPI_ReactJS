@@ -22,6 +22,7 @@ const CreateUtilisateur = async (req, res, next) => {
   }
 };
 
+
 module.exports = {
   CreateUtilisateur,
 };

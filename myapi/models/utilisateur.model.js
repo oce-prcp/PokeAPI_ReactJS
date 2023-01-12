@@ -1,9 +1,10 @@
 const { model, Schema } = require("mongoose");
+const uniqueValidator = require("mongoose-unique-validator")
 
 // Schema de l'utilisateur
 // Schema of the user's
 const Utilisateur = new Schema({
-  pseudo: String,
+  pseudo: {type: String, unique: true},
   password: String,
   pokedex: [Number],
 
@@ -12,5 +13,7 @@ const Utilisateur = new Schema({
     default: Date.now,
   },
 });
+
+Utilisateur.plugin(uniqueValidator);
 
 module.exports = model("User", Utilisateur, "users");
