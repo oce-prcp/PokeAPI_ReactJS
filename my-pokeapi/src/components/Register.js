@@ -10,7 +10,7 @@ import "../style/login.css";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = "/register";
+const REGISTER_URL = "http://localhost:5000/signup";
 
 const Register = () => {
   const userRef = useRef();
@@ -60,7 +60,7 @@ const Register = () => {
     try {
       const response = await axios.post(
         REGISTER_URL,
-        JSON.stringify({ user, pwd }),
+        JSON.stringify({ user, password:pwd }),
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -78,9 +78,12 @@ const Register = () => {
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
+        console.log("Banane")
       } else if (err.response?.status === 409) {
+        console.log("Banane")
         setErrMsg("Username Taken");
       } else {
+        console.log("Banane")
         setErrMsg("Registration Failed");
       }
       errRef.current.focus();

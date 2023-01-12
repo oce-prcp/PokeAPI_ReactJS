@@ -3,7 +3,7 @@ import AuthContext from "./context/AuthProvider";
 import "../style/login.css";
 
 import axios from "../axios";
-const LOGIN_URL = "/auth";
+const LOGIN_URL = "http://localhost:5000/login";
 
 const Login = () => {
   const { setAuth } = useContext(AuthContext);

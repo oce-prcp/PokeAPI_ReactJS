@@ -6,6 +6,7 @@ const usercontroller = require("./controllers/users.controllers.js");
 const pokedexdto = require("./controllers/pokedex.controller.js");
 const AddPokemoncontroller = require("./controllers/pokedex.controller.js");
 
+
 require("./database");
 const cors = require("cors");
 
@@ -28,11 +29,6 @@ app.get("/", (req, res) => {
 
 // Route pour crée l'utilisateur
 // Route to create the user
-app.post(
-  "/users/register",
-  userdto.CreateUtilisateur,
-  usercontroller.CreateUser
-);
 
 // Ecoute le port 5000 pour l'api
 //listen on port 5000
@@ -40,8 +36,8 @@ app.listen(5000, () => {
   console.log("API écoute sur le port 5000");
 });
 
-
 app.get("/users/pokemons", pokedexdto.GetPokemons, AddPokemoncontroller.GetPokemons);
-
-
 app.patch("/users/pokemons", pokedexdto.AddPokemon, AddPokemoncontroller.AddPokemon);
+
+app.post("/signup", usercontroller.signup);
+app.post("/login", usercontroller.login);
