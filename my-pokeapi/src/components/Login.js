@@ -57,8 +57,10 @@ const Login = () => {
     }
   };
 
+  
   return (
     <>
+    <div className="background-login"></div>
       <img
         src="https://www.pngplay.com/wp-content/uploads/10/Pokemon-Free-Picture-PNG.png"
         alt="logo"

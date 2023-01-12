@@ -1,4 +1,15 @@
 /* Path: my-pokeapi\src\style\mypokedex.css */
+.background-mypokedex {
+  background-image: url(../../img/background-poke.png);
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 120vh;
+  position: fixed;
+  top: -2%;
+  z-index: -1;
+  border: 0;
+  padding: 0;
+}
 
 .btn-input {
   color: #333;
@@ -77,3 +88,11 @@
 .btn-search:hover {
   scale: 1.1;
 }
+
+/* .background-pokedex {
+  background-image: url("/img/background-poke.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+} */

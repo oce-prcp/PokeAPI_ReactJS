@@ -107,6 +107,8 @@ function SearchPokemon() {
         />
       )}
 
+      <div className="background-mypokedex"></div>
+
       <div className="app-container">
         <h1>Pokémons</h1>
         {/* Display all the pokemons */}
