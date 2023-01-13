@@ -70,8 +70,12 @@ const Login = () => {
           <h1>You are logged in !</h1>
           <br />
           <p>
+<<<<<<< HEAD
             <a href="/my-pokeapi">Go to Home</a>
             
+=======
+            <a href="/">Go to Home</a>
+>>>>>>> 2fca8a770ebe1b3f58aba2109d4c040ef62c7300
           </p>
         </section>
       ) : (
