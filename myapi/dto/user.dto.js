@@ -1,6 +1,6 @@
 const utilisateur = require("../models/utilisateur.model");
 
-// Permets de créer un utilisateur et vérifie si l'utilisateur exist déjà et vérifie si le mot de passe est incorrect
+// Permets de créer un utilisateur et vérifie si l'utilisateur existe déjà et vérifie si le mot de passe est incorrect
 // Allows you to create a user and check if the the user exist ans the password is incorrect
 const CreateUtilisateur = async (req, res, next) => {
   try {

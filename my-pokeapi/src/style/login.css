@@ -1,3 +1,5 @@
+/* Css for Login and Register page */
+
 .background-login {
     background-image: url(../../img/test-2.png);
     /* background-attachment: fixed;
@@ -68,6 +70,8 @@
   margin-left: 50rem;
 }
 
+/* Responsive */
+
 @media screen and (max-width: 400px) {
   .img-pokemon {
     width: 6rem;
@@ -75,7 +79,6 @@
     margin-top: 0.8rem;
   }
 }
-
 @media screen and (max-width: 420px) {
   .img-pokemon {
     width: 8rem;
@@ -83,7 +86,6 @@
     margin-top: 0.8rem;
   }
 }
-
 @media screen and (max-width: 480px) {
   .img-pokemon {
     width: 10rem;

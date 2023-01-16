@@ -6,6 +6,7 @@ import pokemonService from "./pokemonService";
 import PokemonThumbnail from "./PokemonThumbnail";
 import "../style/pokedex.css";
 
+// Fonction permettant d'afficher tous les pokemons
 // Function that allow to call the API
 function Pokedex() {
   const [allPokemons, setAllPokemons] = useState([]);
@@ -14,6 +15,7 @@ function Pokedex() {
     "https://pokeapi.co/api/v2/pokemon/"
   );
 
+  // Fonction qui permet de rechercher depuis l'API un nom de pokémon
   // Search for a pokemon using the API
   // eslint-disable-next-line no-unused-vars
   const handleClick = async () => {
@@ -25,12 +27,14 @@ function Pokedex() {
     }
   };
 
+  // Fonction qui permet d'afficher plus de pokemons quand on appuie sur le bouton
   // Function that allows you to display more pokemon when you press the button
   const getAllPokemons = async () => {
     const res = await fetch(loadMore);
     const data = await res.json();
     setLoadMore(data.next);
 
+    // Fonction qui permet de créer un objet pokemon
     // Function to create a pokemon object
     async function createPokemonObject(result) {
       return await Promise.all(
@@ -43,11 +47,13 @@ function Pokedex() {
         })
       );
     }
+    // Fonction qui permet de créer un objet pokemon
     // Function to create a pokemon object
     const pokemons = await createPokemonObject(data.results);
     setAllPokemons([...allPokemons, ...pokemons]);
   };
 
+  // Fonction qui permet de mettre en ordre les pokemons
   // Function that allow to put in order the pokemon
   const sortPokemon = (p1, p2) => p1.id < p2.id;
 
@@ -60,6 +66,7 @@ function Pokedex() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // Fonction qui permet d'ajouter ou de supprimer un pokemon de la liste
   // Function that allows you to add or remove a pokemon from the list
   // eslint-disable-next-line no-unused-vars
   function modifyPokemon(id) {
@@ -73,6 +80,7 @@ function Pokedex() {
       setSavedValue(tabtempo);
     }
   }
+  // Fonction qui permet d'ajouter ou de supprimer un pokemon de la liste
   // Function that allows you to add or remove a pokemon from the list
   return (
     <>
@@ -96,7 +104,7 @@ function Pokedex() {
           </div>
         </div>
       </div>
-
+      {/* Button qui permet d'afficher plus de pokemons quand on appuie sur le bouton */}
       {/* Button that allows you to display more pokemon when you press the button */}
       <button className="load-more" onClick={() => getAllPokemons()}>
         Load more

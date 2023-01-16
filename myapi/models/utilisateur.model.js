@@ -14,6 +14,8 @@ const Utilisateur = new Schema({
   },
 });
 
+// Validation de l'unicité du pseudo
+// Validation of the unique pseudo
 Utilisateur.plugin(uniqueValidator);
 
 module.exports = model("User", Utilisateur, "users");

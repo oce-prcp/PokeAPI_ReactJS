@@ -1,31 +1,31 @@
 const mongoose = require("mongoose");
 const { connect, set } = mongoose;
 
-// Conexxion à la base de données
+// Conexion à la base de données
 // connection to the database
 mongoose.connection.on("connected", () => {
     console.log("La connexion à la base de données est établi");
 });
 
-// Reconnexion a la base de données
+// Reconnexion à la base de données
 // Reconnexion to the database
 mongoose.connection.on("reconnected", () => {
     console.log("La connexion à la base de données en cours");
 });
 
-// Deconnexion a la base de données
+// Deconnexion à la base de données
 // Deconnexion to the database
 mongoose.connection.on("disconnected", () => {
     console.log("La connexion à la base de données est terminé");
 });
 
-// Connexion a la base de données fermé 
+// Connexion à la base de données fermé 
 // Connection to the database Closed
 mongoose.connection.on("close", () => {
     console.log("La connexion à la base de données est fermé");
 });
 
-// La connection à la base de données à rencontrer une erreur
+// La connection à la base de données à rencontré une erreur
 // The connection to the database encoutered an error 
 mongoose.connection.on("error", (error) => {
     console.log("La connexion à la base de données à rencontrer une erreur", error);

@@ -10,6 +10,7 @@ import "../style/login.css";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+// URL of the API
 const REGISTER_URL = "http://localhost:5000/signup";
 
 const Register = () => {
@@ -35,10 +36,13 @@ const Register = () => {
     userRef.current.focus();
   }, []);
 
+  // Set the focus on the username input
   useEffect(() => {
     setValidName(USER_REGEX.test(user));
   }, [user]);
 
+  // 
+  // Set the focus on the password input
   useEffect(() => {
     setValidPwd(PWD_REGEX.test(pwd));
     setValidMatch(pwd === matchPwd);
@@ -48,6 +52,8 @@ const Register = () => {
     setErrMsg("");
   }, [user, pwd, matchPwd]);
 
+  // Gère la soumission du formulaire pour connecter l'utilisateur
+  // Handle the submit of the form to login the user
   const handleSubmit = async (e) => {
     e.preventDefault();
     // if button enabled with JS hack
@@ -57,6 +63,7 @@ const Register = () => {
       setErrMsg("Invalid Entry");
       return;
     }
+    
     try {
       const response = await axios.post(
         REGISTER_URL,
@@ -86,7 +93,8 @@ const Register = () => {
       errRef.current.focus();
     }
   };
-
+  // Gère la soumission du formulaire pour connecter l'utilisateur
+  // Handle the submit of the form to login the user
   return (
     <>
     <div className="background-register"></div>
@@ -97,7 +105,7 @@ const Register = () => {
         className="img-pokemon"
       />
       {success ? (
-        <section>
+        <section className="cadre">
           <h1>Success !</h1>
           <p>
             <a href="/login">Sign In</a>

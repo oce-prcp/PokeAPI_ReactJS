@@ -3,12 +3,16 @@ import AuthContext from "./context/AuthProvider";
 import "../style/login.css";
 import axios from "../axios";
 
+// L'url de l'API
+// URL of the API
 const LOGIN_URL = "http://localhost:5000/login";
 const Login = () => {
   const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
+  // Créer les states pour le nom d'utilisateur, le mot de passe, le message d'erreur et le succès
+  // Create the states for the username, password, error message and success
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
@@ -25,6 +29,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Check si le nom d'utilisateur et le mot de passe ne sont pas vides
+    // Check if the username and password are not empty
     try {
       const response = await axios.post(
         LOGIN_URL,
@@ -56,7 +62,8 @@ const Login = () => {
     }
   };
 
-  
+  // Créer le formulaire pour se connecter avec le nom d'utilisateur et le mot de passe et le bouton pour soumettre
+  // Create the form to login with the username and password and the button to submit
   return (
     <>
     <div className="background-login"></div>

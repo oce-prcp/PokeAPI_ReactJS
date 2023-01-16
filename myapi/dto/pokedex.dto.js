@@ -1,6 +1,6 @@
 const pokedex = require("../models/pokedex.model.js")
 
-// Permet de crée un pokédex et vérifie si il exist déjà
+// Permet de crée un pokédex et vérifie si il existe déjà
 // Allow you to create a pokedex and check if it already exists
 const CreatePokedex = async(req, res,next) => {
     
@@ -19,6 +19,8 @@ const CreatePokedex = async(req, res,next) => {
     }
 }
 
+// Permet d'ajouter un pokémon dans le pokédex
+// Allow you to add a pokemon in the pokedex
 const AddPokemon = async (req, res, next) => {
     try {
         const { id, pseudo } = req.body;
@@ -38,6 +40,8 @@ const AddPokemon = async (req, res, next) => {
     }
 };
 
+// Permet de récupérer les pokémons du pokédex
+// Allow you to get the pokemons in the pokedex
     const GetPokemons = async (req, res, next) => {
         try {
         const user = await utilisateur.findOne({ pseudo: req.headers.pseudo });
@@ -56,10 +60,8 @@ const AddPokemon = async (req, res, next) => {
     }
 };
 
-
-
-
-
+// Exportation des fonctions
+// Exportation of the functions
 module.exports = 
 {
     CreatePokedex,

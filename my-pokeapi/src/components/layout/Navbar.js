@@ -10,6 +10,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../style/navbar.css";
 
+// Fonction permettant d'afficher la barre de navigation
+// Function that allow to display the navbar
+
+// Permet d'afficher la barre de navigation avec les différentes pages du pokedex
 // Allow to display the nav bar with the different pages of the pokedex
 function PrintNavBar() {
   const navigate = useNavigate();
@@ -22,6 +26,7 @@ function PrintNavBar() {
             alt="logo"
             className="logo"
           />
+          {/* Afficher les différentes pages du pokedex */}
           {/* Display the different pages of the pokedex */}
           <Nav.Link
             style={{

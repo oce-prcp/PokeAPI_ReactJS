@@ -33,6 +33,8 @@ const signup = (req, res, next) => {
     .catch(error => res.status(500).json({ error }));
 };
 
+// Permets de se connecter
+// Allow you to login
 const login = (req, res, next) => {
   User.findOne({ pseudo: req.body.pseudo })
       .then(user => {

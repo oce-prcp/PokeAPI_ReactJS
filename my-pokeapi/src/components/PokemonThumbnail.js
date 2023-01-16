@@ -5,6 +5,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
+// Créer une fonction qui permet d'ajouter ou de supprimer un pokemon de la liste pokedex
 // Create a function that allows to add or remove a pokemon from the pokedex list
 const PokemonThumbnail = ({ id, name, image, type, type2 }) => {
   return (
@@ -36,6 +37,7 @@ const PokemonThumbnail = ({ id, name, image, type, type2 }) => {
         </svg>
       </Button>
 
+      {/* Afficher l'identifiant du pokémon, l'image du pokémon, le nom du pokémon et le type de pokémon */}
       {/* Display the pokemon id, the pokemon image, the pokemon name and the pokemon type */}
       <div className="number">
         <small>#0{id}</small>

@@ -1,4 +1,5 @@
 /* Path: my-pokeapi\src\style\pokedex.css */
+/* Style for Pokedex page */
 
 .background-pokedex {
   background-image: url(../../img/background.jpg);
@@ -22,6 +23,7 @@
   padding: 3rem 0.5rem;
   color: rgb(247, 247, 247);
 }
+
 .pokemon-container {
   display: flex;
   flex-direction: column;
@@ -29,12 +31,14 @@
   justify-content: center;
   color: rgb(22, 22, 22);
 }
+
 .all-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
+
 .thumb-container {
   display: flex;
   flex-direction: column;
@@ -56,6 +60,7 @@
   margin-bottom: 1rem;
   position: relative;
 }
+
 h1 {
   margin-bottom: 0.2rem;
   font-size: 2.3rem;
@@ -64,6 +69,7 @@ h1 {
   color: #ffd322;
   font-family: "Courier New", Courier, monospace;
 }
+
 .thumb-container .number {
   border-radius: 1rem;
   padding: 0.3rem 0.5rem;
@@ -73,15 +79,18 @@ h1 {
   font-weight: 500;
   text-transform: capitalize;
 }
+
 .thumb-container img {
   width: 120px;
   height: 120px;
 }
+
 .thumb-container small {
   font-size: 0.8rem;
   font-weight: 500;
   text-transform: capitalize;
 }
+
 .detail-wrapper {
   display: flex;
   flex-direction: column;
@@ -89,6 +98,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
 .detail-wrapper button {
   color: rgb(22, 22, 22);
   padding: 0.5rem;
@@ -98,6 +108,7 @@ h1 {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.185);
 }
+
 .btn-star {
   background-color: transparent;
   border: none;
@@ -109,11 +120,13 @@ h1 {
   right: 00.3rem;
   top: 0;
 }
+
 .btn-star:hover {
   color: #fff;
   scale: 1.1;
   transition: all 0.2s ease-in-out;
 }
+
 .load-more {
   border-radius: 3px;
   border: 1px solid #ffd322;
@@ -142,6 +155,9 @@ h1 {
   transition: background 0.2s ease-in-out;
 }
 
+
+/* Media Queries */
+/* Responsive */
 @media (max-width: 420px) {
   h1 {
     margin-top: 1rem;
@@ -152,7 +168,6 @@ h1 {
     margin-right: 10rem;
   }
 }
-
 @media (max-width: 500px) {
   .load-more {
     margin-left: 35vw;

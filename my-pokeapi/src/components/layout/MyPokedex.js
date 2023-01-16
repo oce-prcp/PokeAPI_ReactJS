@@ -1,10 +1,13 @@
+// Ce composant est utilisé pour afficher le pokedex de l'utilisateur
+// This component is used to display the pokedex of the user
 import React from "react";
 import "../../style/mypokedex.css";
 import { useEffect, useState } from "react";
 import PokemonThumbnail from "../PokemonThumbnail";
 import Button from "react-bootstrap/Button";
 
-//Function that allows to search from the API a pokemon name and display and display it
+// Fonction qui permet de rechercher depuis l'API un nom de pokémon et de l'afficher
+// Function that allows to search from the API a pokemon name and display it
 function SearchPokemon() {
   const [pokemon, setPokemon] = useState(null);
   const [, setLoading] = useState(false);
@@ -13,6 +16,8 @@ function SearchPokemon() {
   const [allPokemons, setAllPokemons] = useState([]);
   const sortPokemon = (p1, p2) => p1.id < p2.id;
 
+  // Fonction qui permet de rechercher depuis l'API un nom de pokémon et de l'afficher
+  // Function that allows to fetch the pokedex of the user
   useEffect(() => {
     async function fetchWare() {
       try {
@@ -25,6 +30,8 @@ function SearchPokemon() {
         });
         let res = await response.json();
 
+        // Récupérer tous les pokemons du pokedex
+        // Fetch all the pokemons of the pokedex
         await Promise.all(
           res.pokedex.map(async (pokemon) => {
             let secondResponse = await fetch(
@@ -41,6 +48,8 @@ function SearchPokemon() {
     }
     fetchWare();
   }, []);
+  // Fonction qui permet de rechercher depuis l'API un nom de pokémon
+  // Function that allows to fetch the pokemon from the API
   useEffect(() => {
     async function fetchPokemon() {
       setLoading(true);
@@ -96,6 +105,7 @@ function SearchPokemon() {
         </svg>
       </Button>
 
+      {/* Si le pokemon n'est pas null, afficher le thumbnail du pokemon */}
       {/* If the pokemon is not null, display the pokemon thumbnail */}
       {!pokemon === false && (
         <PokemonThumbnail
@@ -109,11 +119,14 @@ function SearchPokemon() {
 
       <div className="background-mypokedex"></div>
 
+        
       <div className="app-container">
         <h1>Pokémons</h1>
+        {/* Afficher tous les pokemons */}
         {/* Display all the pokemons */}
         <div className="pokemon-container">
           <div className="all-container">
+            {/* Trier les pokemons par id */}
             {/* Sort the pokemon by id */}
             {allPokemons.sort(sortPokemon).map((pokemon, index) => (
               <PokemonThumbnail
