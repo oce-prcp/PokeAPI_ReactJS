@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Pokedex from "./components/Pokedex";
 import SearchPokemon from "./components/layout/MyPokedex";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from "./components/login/Login";
+import Register from "./components/login/Register";
 
 import Battle from "./components/layout/Battle";
 

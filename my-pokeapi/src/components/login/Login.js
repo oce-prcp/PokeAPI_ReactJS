@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, useContext } from "react";
-import AuthContext from "./context/AuthProvider";
-import "../style/login.css";
-import axios from "../axios";
+import AuthContext from "../context/AuthProvider";
+import "../../style/login.css";
+import axios from "../../axios";
 
 // L'url de l'API
 // URL of the API
