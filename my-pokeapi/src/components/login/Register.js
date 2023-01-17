@@ -232,6 +232,8 @@ const Register = () => {
               Must match the first password input field.
             </p>
 
+            {/* Vérifie si les inputs sont valides pour activer le bouton */}
+            {/* Set the button to disabled if any of the inputs are invalid */}
             <button
               className="btn-sign"
               disabled={!validName || !validPwd || !validMatch ? true : false}
